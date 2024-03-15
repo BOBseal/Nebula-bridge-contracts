@@ -1,0 +1,433 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"name": "NotAnEvmAddress",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "OwnableInvalidOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "OwnableUnauthorizedAccount",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "wormholeId",
+						"type": "uint16"
+					},
+					{
+						"internalType": "address",
+						"name": "contractAddress",
+						"type": "address"
+					}
+				],
+				"name": "_removeWormholeEndpoint",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "wormholeId",
+						"type": "uint16"
+					},
+					{
+						"internalType": "address",
+						"name": "contractAddress",
+						"type": "address"
+					}
+				],
+				"name": "_setWormholeEndpoint",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "payload",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes[]",
+						"name": "additionalVaas",
+						"type": "bytes[]"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "sourceAddress",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint16",
+						"name": "sourceChain",
+						"type": "uint16"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "deliveryHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "receiveWormholeMessages",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "sourceChain",
+						"type": "uint16"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "sourceAddress",
+						"type": "bytes32"
+					}
+				],
+				"name": "setRegisteredSender",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokenBridge",
+				"outputs": [
+					{
+						"internalType": "contract ITokenBridge",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "wormhole",
+				"outputs": [
+					{
+						"internalType": "contract IWormhole",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "wormholeRelayer",
+				"outputs": [
+					{
+						"internalType": "contract IWormholeRelayer",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"errors": {
+				"OwnableInvalidOwner(address)": [
+					{
+						"details": "The owner is not a valid owner account. (eg. `address(0)`)"
+					}
+				],
+				"OwnableUnauthorizedAccount(address)": [
+					{
+						"details": "The caller account is not authorized to perform an operation."
+					}
+				]
+			},
+			"kind": "dev",
+			"methods": {
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"setRegisteredSender(uint16,bytes32)": {
+					"notice": "Sets the registered address for 'sourceChain' to 'sourceAddress' So that for messages from 'sourceChain', only ones from 'sourceAddress' are valid Assumes only one sender per chain is valid Sender is the address that called 'send' on the Wormhole Relayer contract on the source chain)"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"BRIDGE_PARTNERSHIP/erc20Bridge.sol": "ERC20Bridge"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c",
+				"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/erc20Bridge.sol": {
+			"keccak256": "0xceeaf0c7c9ec71df377d17ea3e7de222cfdd9c44ac92efa948c8485ea1a6a3f8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://19ea7a7b8f67907d7db665cfff64ac0d9dfba91a71c5c330be07751b2afd462a",
+				"dweb:/ipfs/QmQYkUJzocU2GKQ6h59WdqHLMSP6SuPh63SyjqSEZJiXei"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/lib.d.sol": {
+			"keccak256": "0x2875da2b3be594eb327b762fb8e8580e50c9b1d2850065e38c5ad688d960bdfa",
+			"license": "Unlicensed",
+			"urls": [
+				"bzz-raw://d074d6b0e3e77088e6d0bfc6957b4d6f8b86d94990be1da9aabbabb2785535db",
+				"dweb:/ipfs/QmNa5Fk1mSnYpZhtmB65cM9gGQDCw8eyadAQpPKAQh96Aj"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/Base.sol": {
+			"keccak256": "0x249d3dcd47a4f9183fa6aff8f1c75956cf54c217481177725ff2fd93f49c59c3",
+			"urls": [
+				"bzz-raw://aa0ceb0ac96ace95d5bbfc369577baec10d02ba33b514d10b868b8f48c2e0b0a",
+				"dweb:/ipfs/QmWPeQGpcu7SvzHmEnLybwJ6pGwzARKDpQYxVRbopRHK1o"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/CCTPAndTokenBase.sol": {
+			"keccak256": "0x4c2b579e45cd567796c6639d4a1b7332e196343b2b0b351d4b2f1b7eb9a5de15",
+			"urls": [
+				"bzz-raw://ead29a9e0ccf4f0559c6aacf2dff6654b33e2a897c96b44c8a601d51a102e3b6",
+				"dweb:/ipfs/QmQqiw27bAZUMZG2uMhSUnfxp9SVRpi25VGGnkTqw6MYEj"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/CCTPBase.sol": {
+			"keccak256": "0xb0cb70d96d3c57421feca6842eab200246abcfcd1da1d53003449c9f517b9b36",
+			"urls": [
+				"bzz-raw://b12d2fa5425eaf7bfb6d5c7c2f949dbd50c11939f4636a64cd1b440ab4010999",
+				"dweb:/ipfs/QmZZoGiQPRTCZtmjxsTzcd55wCkiriPiBPFU911XP3536i"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/TokenBase.sol": {
+			"keccak256": "0x3b5fb0a5f7771786872b6860c4d3da6ee7bf25b8056cf3d6698a6e0249b93e6c",
+			"urls": [
+				"bzz-raw://01d3397960486a2d66765b317d97f9f2f804a77c324ca9bac680d05f1ca647e9",
+				"dweb:/ipfs/QmeAT4kfAqE1YLT4Goe24bBNLPZksBZ4nJmQoKpHo6Js2g"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/Utils.sol": {
+			"keccak256": "0x2cfbe9804905a7ed86586add8316eed5b56421ed9d06637638448c19d85a9b0c",
+			"urls": [
+				"bzz-raw://abf5bf5f020206721a087d5c184fe7184d1f6709f98aca9fd8222e5c73a5d659",
+				"dweb:/ipfs/QmdjQPtSXYgvEWRb74C5Tg56961PbmkvRo2NdUFPqLTdBB"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/WormholeRelayerSDK.sol": {
+			"keccak256": "0x39b2a67c047941692c560b01198cfa5e24d326c11c23ae6b420571849ae80d0c",
+			"urls": [
+				"bzz-raw://37d655ea5d15012a32f05f08151d5cb597065b5af6102060c2f7836b32356e25",
+				"dweb:/ipfs/QmYNenC57JECfqSmjnXa59yxkmPjTmSi6fh53XC343d3ru"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/interfaces/CCTPInterfaces/IMessageTransmitter.sol": {
+			"keccak256": "0xc1551a0378325853216cc7e5f3ab22954cb0b411b83221a66e92a36c19442c47",
+			"urls": [
+				"bzz-raw://ff2d7c07ee8da54cdadbac59fcfe959b5409918ff1ed9ff068f35c728d581dc1",
+				"dweb:/ipfs/QmYuDBQxHYbwAbUQcGT6kRqTnSfatcAhXEWBXJfm3ghBsg"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/interfaces/CCTPInterfaces/IReceiver.sol": {
+			"keccak256": "0xc0e1ae6b294cd6f6b2ce6185f4856a54c3f8b66f07cc0944b923db44efa8b286",
+			"urls": [
+				"bzz-raw://ac7be5f0311f28a5e830f806bcf69e566e72b18491c5ad126464ceb9fd31dc55",
+				"dweb:/ipfs/QmaKSBuABhRzF3t51yHKb9jVzzia9Y5gNFfS4u4reSMkLD"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/interfaces/CCTPInterfaces/IRelayer.sol": {
+			"keccak256": "0x5772f5f420a80b366754817089d56e12b504535deeedfad4e7403f3ca508ead0",
+			"urls": [
+				"bzz-raw://d9aaa08e6fdfd5253000ef7644f5fb7e9ed7a18ebb0989731bf828b4b5b44a1e",
+				"dweb:/ipfs/QmNvipZ7DM8XvmYRfr8nD9MyvoqAdQDQjM9wiqfZnDbWtN"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/interfaces/CCTPInterfaces/ITokenMessenger.sol": {
+			"keccak256": "0x2ab7696fa8b684863a088ded6251035a87a288737f6621730991a38dc303236c",
+			"urls": [
+				"bzz-raw://c47386479f378b8da3eb6c5254dd31b6657986c0fb668d27512a9cd8403cf562",
+				"dweb:/ipfs/QmUWQ95zVef9LHUfG4iurtjurVfW2TdQB7m41NopaQNNgY"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/interfaces/IERC20.sol": {
+			"keccak256": "0x206e252911fb60d0d6a54fb657b64344c33fa237ddb8553aa668a24d1856a7c2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4cb73e8c2fd4ab43f4ed672a19fd7629fc169034dc461524bebd67d9fe9bb000",
+				"dweb:/ipfs/Qmd9wCoy5gDduquSq7po6uNFx9W28zS5drXXErDnN24aNZ"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/interfaces/ITokenBridge.sol": {
+			"keccak256": "0xad665028667c70a3663044b335e3a1d388da3018bf4720853adb9fa8f49a9342",
+			"license": "Apache 2",
+			"urls": [
+				"bzz-raw://d86e90b3ee0c951fe3169df0af0d1071fb073d506923ecfee4e51f3eef941919",
+				"dweb:/ipfs/Qmdu9AjEp1JaD6KEwe5S5pxgnzii5QXFR2peApBNkhNTes"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/interfaces/IWETH.sol": {
+			"keccak256": "0xbb3a2b248ef78c421dd137e75236af605d4618acca294e8930a9ba1aed769c9e",
+			"license": "Apache 2",
+			"urls": [
+				"bzz-raw://e5402ba174843110d8ac66b1f7cc90d4dbc2d50996ed15165a64b093b33dfcd8",
+				"dweb:/ipfs/QmfRtStHfFaQjSs5wocQmQEdosd6a5QmTP6rbB6ETqgmb4"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/interfaces/IWormhole.sol": {
+			"keccak256": "0x9256fa479ecc3f4dc17b2860230ce6d658858262bee1dbabd654208381227d0d",
+			"license": "Apache 2",
+			"urls": [
+				"bzz-raw://521d895f44fe73b39cff8183d6e8a6a23e8cc3336fc3e1874ad798b9803b390b",
+				"dweb:/ipfs/Qmdcw3Af8FcwgXUEWFcvwFKZ3B4d2dzWosUorrSLAnfN2Y"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/interfaces/IWormholeReceiver.sol": {
+			"keccak256": "0x5e492d502a4be6633cab7c4d0f65c1c90fef2f05a4fd591de896ef3c6d7794cf",
+			"license": "Apache 2",
+			"urls": [
+				"bzz-raw://509831b21b066d67c75423cad68420946970f44581e540afa11b6678c68f7d17",
+				"dweb:/ipfs/QmaWTnPcSVPq9c44V1ZdsBX8P1a6qjJst3Vy7oNcuAgBs6"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/interfaces/IWormholeRelayer.sol": {
+			"keccak256": "0xaa4afc2866e54ed9c9540e8ac4872d6ab9527884243087997a7d00f444004efc",
+			"license": "Apache 2",
+			"urls": [
+				"bzz-raw://1f96f1d944798269dca0afed8cf3c64fda0493c375170783692d0f506bab20af",
+				"dweb:/ipfs/QmXwQBXgvBMX8z8bd6excB5x9wHhnkRZQVmgswmFmqk9cu"
+			]
+		}
+	},
+	"version": 1
+}

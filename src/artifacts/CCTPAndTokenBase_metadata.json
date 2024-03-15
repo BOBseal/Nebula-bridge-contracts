@@ -1,0 +1,217 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "sourceChain",
+						"type": "uint16"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "sourceAddress",
+						"type": "bytes32"
+					}
+				],
+				"name": "setRegisteredSender",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokenBridge",
+				"outputs": [
+					{
+						"internalType": "contract ITokenBridge",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "wormhole",
+				"outputs": [
+					{
+						"internalType": "contract IWormhole",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "wormholeRelayer",
+				"outputs": [
+					{
+						"internalType": "contract IWormholeRelayer",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"setRegisteredSender(uint16,bytes32)": {
+					"notice": "Sets the registered address for 'sourceChain' to 'sourceAddress' So that for messages from 'sourceChain', only ones from 'sourceAddress' are valid Assumes only one sender per chain is valid Sender is the address that called 'send' on the Wormhole Relayer contract on the source chain)"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"BRIDGE_PARTNERSHIP/src/CCTPAndTokenBase.sol": "CCTPAndTokenBase"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"BRIDGE_PARTNERSHIP/src/Base.sol": {
+			"keccak256": "0x249d3dcd47a4f9183fa6aff8f1c75956cf54c217481177725ff2fd93f49c59c3",
+			"urls": [
+				"bzz-raw://aa0ceb0ac96ace95d5bbfc369577baec10d02ba33b514d10b868b8f48c2e0b0a",
+				"dweb:/ipfs/QmWPeQGpcu7SvzHmEnLybwJ6pGwzARKDpQYxVRbopRHK1o"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/CCTPAndTokenBase.sol": {
+			"keccak256": "0x4c2b579e45cd567796c6639d4a1b7332e196343b2b0b351d4b2f1b7eb9a5de15",
+			"urls": [
+				"bzz-raw://ead29a9e0ccf4f0559c6aacf2dff6654b33e2a897c96b44c8a601d51a102e3b6",
+				"dweb:/ipfs/QmQqiw27bAZUMZG2uMhSUnfxp9SVRpi25VGGnkTqw6MYEj"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/CCTPBase.sol": {
+			"keccak256": "0xb0cb70d96d3c57421feca6842eab200246abcfcd1da1d53003449c9f517b9b36",
+			"urls": [
+				"bzz-raw://b12d2fa5425eaf7bfb6d5c7c2f949dbd50c11939f4636a64cd1b440ab4010999",
+				"dweb:/ipfs/QmZZoGiQPRTCZtmjxsTzcd55wCkiriPiBPFU911XP3536i"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/TokenBase.sol": {
+			"keccak256": "0xaff38c92273fe8909bab2f2af13defa9ee74cc7508a3c4fcb3571fbc080c7248",
+			"urls": [
+				"bzz-raw://2b711e7ae097298392c43415b1bd4ad45a21a0dc25b37f549e1a70130dc443a2",
+				"dweb:/ipfs/QmcZKoHFthGmtDM1uXXLdRZeGr95sxj7qAQKzC2p78iv74"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/Utils.sol": {
+			"keccak256": "0x2cfbe9804905a7ed86586add8316eed5b56421ed9d06637638448c19d85a9b0c",
+			"urls": [
+				"bzz-raw://abf5bf5f020206721a087d5c184fe7184d1f6709f98aca9fd8222e5c73a5d659",
+				"dweb:/ipfs/QmdjQPtSXYgvEWRb74C5Tg56961PbmkvRo2NdUFPqLTdBB"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/WormholeRelayerSDK.sol": {
+			"keccak256": "0x39b2a67c047941692c560b01198cfa5e24d326c11c23ae6b420571849ae80d0c",
+			"urls": [
+				"bzz-raw://37d655ea5d15012a32f05f08151d5cb597065b5af6102060c2f7836b32356e25",
+				"dweb:/ipfs/QmYNenC57JECfqSmjnXa59yxkmPjTmSi6fh53XC343d3ru"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/interfaces/CCTPInterfaces/IMessageTransmitter.sol": {
+			"keccak256": "0xc1551a0378325853216cc7e5f3ab22954cb0b411b83221a66e92a36c19442c47",
+			"urls": [
+				"bzz-raw://ff2d7c07ee8da54cdadbac59fcfe959b5409918ff1ed9ff068f35c728d581dc1",
+				"dweb:/ipfs/QmYuDBQxHYbwAbUQcGT6kRqTnSfatcAhXEWBXJfm3ghBsg"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/interfaces/CCTPInterfaces/IReceiver.sol": {
+			"keccak256": "0xc0e1ae6b294cd6f6b2ce6185f4856a54c3f8b66f07cc0944b923db44efa8b286",
+			"urls": [
+				"bzz-raw://ac7be5f0311f28a5e830f806bcf69e566e72b18491c5ad126464ceb9fd31dc55",
+				"dweb:/ipfs/QmaKSBuABhRzF3t51yHKb9jVzzia9Y5gNFfS4u4reSMkLD"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/interfaces/CCTPInterfaces/IRelayer.sol": {
+			"keccak256": "0x5772f5f420a80b366754817089d56e12b504535deeedfad4e7403f3ca508ead0",
+			"urls": [
+				"bzz-raw://d9aaa08e6fdfd5253000ef7644f5fb7e9ed7a18ebb0989731bf828b4b5b44a1e",
+				"dweb:/ipfs/QmNvipZ7DM8XvmYRfr8nD9MyvoqAdQDQjM9wiqfZnDbWtN"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/interfaces/CCTPInterfaces/ITokenMessenger.sol": {
+			"keccak256": "0x2ab7696fa8b684863a088ded6251035a87a288737f6621730991a38dc303236c",
+			"urls": [
+				"bzz-raw://c47386479f378b8da3eb6c5254dd31b6657986c0fb668d27512a9cd8403cf562",
+				"dweb:/ipfs/QmUWQ95zVef9LHUfG4iurtjurVfW2TdQB7m41NopaQNNgY"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/interfaces/IERC20.sol": {
+			"keccak256": "0x206e252911fb60d0d6a54fb657b64344c33fa237ddb8553aa668a24d1856a7c2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4cb73e8c2fd4ab43f4ed672a19fd7629fc169034dc461524bebd67d9fe9bb000",
+				"dweb:/ipfs/Qmd9wCoy5gDduquSq7po6uNFx9W28zS5drXXErDnN24aNZ"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/interfaces/ITokenBridge.sol": {
+			"keccak256": "0xad665028667c70a3663044b335e3a1d388da3018bf4720853adb9fa8f49a9342",
+			"license": "Apache 2",
+			"urls": [
+				"bzz-raw://d86e90b3ee0c951fe3169df0af0d1071fb073d506923ecfee4e51f3eef941919",
+				"dweb:/ipfs/Qmdu9AjEp1JaD6KEwe5S5pxgnzii5QXFR2peApBNkhNTes"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/interfaces/IWETH.sol": {
+			"keccak256": "0xbb3a2b248ef78c421dd137e75236af605d4618acca294e8930a9ba1aed769c9e",
+			"license": "Apache 2",
+			"urls": [
+				"bzz-raw://e5402ba174843110d8ac66b1f7cc90d4dbc2d50996ed15165a64b093b33dfcd8",
+				"dweb:/ipfs/QmfRtStHfFaQjSs5wocQmQEdosd6a5QmTP6rbB6ETqgmb4"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/interfaces/IWormhole.sol": {
+			"keccak256": "0x9256fa479ecc3f4dc17b2860230ce6d658858262bee1dbabd654208381227d0d",
+			"license": "Apache 2",
+			"urls": [
+				"bzz-raw://521d895f44fe73b39cff8183d6e8a6a23e8cc3336fc3e1874ad798b9803b390b",
+				"dweb:/ipfs/Qmdcw3Af8FcwgXUEWFcvwFKZ3B4d2dzWosUorrSLAnfN2Y"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/interfaces/IWormholeReceiver.sol": {
+			"keccak256": "0x5e492d502a4be6633cab7c4d0f65c1c90fef2f05a4fd591de896ef3c6d7794cf",
+			"license": "Apache 2",
+			"urls": [
+				"bzz-raw://509831b21b066d67c75423cad68420946970f44581e540afa11b6678c68f7d17",
+				"dweb:/ipfs/QmaWTnPcSVPq9c44V1ZdsBX8P1a6qjJst3Vy7oNcuAgBs6"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/interfaces/IWormholeRelayer.sol": {
+			"keccak256": "0xaa4afc2866e54ed9c9540e8ac4872d6ab9527884243087997a7d00f444004efc",
+			"license": "Apache 2",
+			"urls": [
+				"bzz-raw://1f96f1d944798269dca0afed8cf3c64fda0493c375170783692d0f506bab20af",
+				"dweb:/ipfs/QmXwQBXgvBMX8z8bd6excB5x9wHhnkRZQVmgswmFmqk9cu"
+			]
+		}
+	},
+	"version": 1
+}

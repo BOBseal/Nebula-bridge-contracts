@@ -1,0 +1,156 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"chainIdToCCTPDomain(uint16)": "3a57cd63",
+			"setCCTPDomain(uint16,uint32)": "c6a4fd1c",
+			"setRegisteredSender(uint16,bytes32)": "dd12d68b",
+			"tokenBridge()": "c6328a46",
+			"wormhole()": "84acd1bb",
+			"wormholeRelayer()": "da25b725"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [
+				{
+					"internalType": "uint16",
+					"name": "",
+					"type": "uint16"
+				}
+			],
+			"name": "chainIdToCCTPDomain",
+			"outputs": [
+				{
+					"internalType": "uint32",
+					"name": "",
+					"type": "uint32"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint16",
+					"name": "chain",
+					"type": "uint16"
+				},
+				{
+					"internalType": "uint32",
+					"name": "cctpDomain",
+					"type": "uint32"
+				}
+			],
+			"name": "setCCTPDomain",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint16",
+					"name": "sourceChain",
+					"type": "uint16"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "sourceAddress",
+					"type": "bytes32"
+				}
+			],
+			"name": "setRegisteredSender",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "tokenBridge",
+			"outputs": [
+				{
+					"internalType": "contract ITokenBridge",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "wormhole",
+			"outputs": [
+				{
+					"internalType": "contract IWormhole",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "wormholeRelayer",
+			"outputs": [
+				{
+					"internalType": "contract IWormholeRelayer",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		}
+	]
+}

@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"BRIDGE_PARTNERSHIP/lib.d.sol": "Inputs"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"BRIDGE_PARTNERSHIP/lib.d.sol": {
+			"keccak256": "0x2875da2b3be594eb327b762fb8e8580e50c9b1d2850065e38c5ad688d960bdfa",
+			"license": "Unlicensed",
+			"urls": [
+				"bzz-raw://d074d6b0e3e77088e6d0bfc6957b4d6f8b86d94990be1da9aabbabb2785535db",
+				"dweb:/ipfs/QmNa5Fk1mSnYpZhtmB65cM9gGQDCw8eyadAQpPKAQh96Aj"
+			]
+		}
+	},
+	"version": 1
+}

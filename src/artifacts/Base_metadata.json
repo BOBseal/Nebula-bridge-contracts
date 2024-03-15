@@ -1,0 +1,124 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "sourceChain",
+						"type": "uint16"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "sourceAddress",
+						"type": "bytes32"
+					}
+				],
+				"name": "setRegisteredSender",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "wormhole",
+				"outputs": [
+					{
+						"internalType": "contract IWormhole",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "wormholeRelayer",
+				"outputs": [
+					{
+						"internalType": "contract IWormholeRelayer",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"setRegisteredSender(uint16,bytes32)": {
+					"notice": "Sets the registered address for 'sourceChain' to 'sourceAddress' So that for messages from 'sourceChain', only ones from 'sourceAddress' are valid Assumes only one sender per chain is valid Sender is the address that called 'send' on the Wormhole Relayer contract on the source chain)"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"BRIDGE_PARTNERSHIP/src/Base.sol": "Base"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"BRIDGE_PARTNERSHIP/src/Base.sol": {
+			"keccak256": "0x249d3dcd47a4f9183fa6aff8f1c75956cf54c217481177725ff2fd93f49c59c3",
+			"urls": [
+				"bzz-raw://aa0ceb0ac96ace95d5bbfc369577baec10d02ba33b514d10b868b8f48c2e0b0a",
+				"dweb:/ipfs/QmWPeQGpcu7SvzHmEnLybwJ6pGwzARKDpQYxVRbopRHK1o"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/Utils.sol": {
+			"keccak256": "0x2cfbe9804905a7ed86586add8316eed5b56421ed9d06637638448c19d85a9b0c",
+			"urls": [
+				"bzz-raw://abf5bf5f020206721a087d5c184fe7184d1f6709f98aca9fd8222e5c73a5d659",
+				"dweb:/ipfs/QmdjQPtSXYgvEWRb74C5Tg56961PbmkvRo2NdUFPqLTdBB"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/interfaces/IWormhole.sol": {
+			"keccak256": "0x9256fa479ecc3f4dc17b2860230ce6d658858262bee1dbabd654208381227d0d",
+			"license": "Apache 2",
+			"urls": [
+				"bzz-raw://521d895f44fe73b39cff8183d6e8a6a23e8cc3336fc3e1874ad798b9803b390b",
+				"dweb:/ipfs/Qmdcw3Af8FcwgXUEWFcvwFKZ3B4d2dzWosUorrSLAnfN2Y"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/interfaces/IWormholeReceiver.sol": {
+			"keccak256": "0x5e492d502a4be6633cab7c4d0f65c1c90fef2f05a4fd591de896ef3c6d7794cf",
+			"license": "Apache 2",
+			"urls": [
+				"bzz-raw://509831b21b066d67c75423cad68420946970f44581e540afa11b6678c68f7d17",
+				"dweb:/ipfs/QmaWTnPcSVPq9c44V1ZdsBX8P1a6qjJst3Vy7oNcuAgBs6"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/src/interfaces/IWormholeRelayer.sol": {
+			"keccak256": "0xaa4afc2866e54ed9c9540e8ac4872d6ab9527884243087997a7d00f444004efc",
+			"license": "Apache 2",
+			"urls": [
+				"bzz-raw://1f96f1d944798269dca0afed8cf3c64fda0493c375170783692d0f506bab20af",
+				"dweb:/ipfs/QmXwQBXgvBMX8z8bd6excB5x9wHhnkRZQVmgswmFmqk9cu"
+			]
+		}
+	},
+	"version": 1
+}

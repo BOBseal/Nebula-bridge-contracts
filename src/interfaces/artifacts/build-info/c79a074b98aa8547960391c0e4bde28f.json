@@ -1,0 +1,374 @@
+{
+	"id": "c79a074b98aa8547960391c0e4bde28f",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.24",
+	"solcLongVersion": "0.8.24+commit.e11b9ed9",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"BRIDGE_PARTNERSHIP/src/interfaces/IWormholeReceiver.sol": {
+				"content": "// SPDX-License-Identifier: Apache 2\r\n\r\npragma solidity ^0.8.0;\r\n\r\n/**\r\n * @notice Interface for a contract which can receive Wormhole messages.\r\n */\r\ninterface IWormholeReceiver {\r\n    /**\r\n     * @notice When a `send` is performed with this contract as the target, this function will be\r\n     *     invoked by the WormholeRelayer contract\r\n     *\r\n     * NOTE: This function should be restricted such that only the Wormhole Relayer contract can call it.\r\n     *\r\n     * We also recommend that this function checks that `sourceChain` and `sourceAddress` are indeed who\r\n     *       you expect to have requested the calling of `send` on the source chain\r\n     *\r\n     * The invocation of this function corresponding to the `send` request will have msg.value equal\r\n     *   to the receiverValue specified in the send request.\r\n     *\r\n     * If the invocation of this function reverts or exceeds the gas limit\r\n     *   specified by the send requester, this delivery will result in a `ReceiverFailure`.\r\n     *\r\n     * @param payload - an arbitrary message which was included in the delivery by the\r\n     *     requester. This message's signature will already have been verified (as long as msg.sender is the Wormhole Relayer contract)\r\n     * @param additionalMessages - Additional messages which were requested to be included in this delivery.\r\n     *      Note: There are no contract-level guarantees that the messages in this array are what was requested\r\n     *      so **you should verify any sensitive information given here!**\r\n     *\r\n     *      For example, if a 'VaaKey' was specified on the source chain, then MAKE SURE the corresponding message here\r\n     *      has valid signatures (by calling `parseAndVerifyVM(message)` on the Wormhole core contract)\r\n     *\r\n     *      This field can be used to perform and relay TokenBridge or CCTP transfers, and there are example\r\n     *      usages of this at\r\n     *         https://github.com/wormhole-foundation/hello-token\r\n     *         https://github.com/wormhole-foundation/hello-cctp\r\n     *\r\n     * @param sourceAddress - the (wormhole format) address on the sending chain which requested\r\n     *     this delivery.\r\n     * @param sourceChain - the wormhole chain ID where this delivery was requested.\r\n     * @param deliveryHash - the VAA hash of the deliveryVAA.\r\n     *\r\n     */\r\n    function receiveWormholeMessages(\r\n        bytes memory payload,\r\n        bytes[] memory additionalMessages,\r\n        bytes32 sourceAddress,\r\n        uint16 sourceChain,\r\n        bytes32 deliveryHash\r\n    ) external payable;\r\n}\r\n"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": true,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": []
+		}
+	},
+	"output": {
+		"contracts": {
+			"BRIDGE_PARTNERSHIP/src/interfaces/IWormholeReceiver.sol": {
+				"IWormholeReceiver": {
+					"abi": [
+						{
+							"inputs": [
+								{
+									"internalType": "bytes",
+									"name": "payload",
+									"type": "bytes"
+								},
+								{
+									"internalType": "bytes[]",
+									"name": "additionalMessages",
+									"type": "bytes[]"
+								},
+								{
+									"internalType": "bytes32",
+									"name": "sourceAddress",
+									"type": "bytes32"
+								},
+								{
+									"internalType": "uint16",
+									"name": "sourceChain",
+									"type": "uint16"
+								},
+								{
+									"internalType": "bytes32",
+									"name": "deliveryHash",
+									"type": "bytes32"
+								}
+							],
+							"name": "receiveWormholeMessages",
+							"outputs": [],
+							"stateMutability": "payable",
+							"type": "function"
+						}
+					],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {
+							"receiveWormholeMessages(bytes,bytes[],bytes32,uint16,bytes32)": {
+								"params": {
+									"additionalMessages": "- Additional messages which were requested to be included in this delivery.      Note: There are no contract-level guarantees that the messages in this array are what was requested      so **you should verify any sensitive information given here!**      For example, if a 'VaaKey' was specified on the source chain, then MAKE SURE the corresponding message here      has valid signatures (by calling `parseAndVerifyVM(message)` on the Wormhole core contract)      This field can be used to perform and relay TokenBridge or CCTP transfers, and there are example      usages of this at         https://github.com/wormhole-foundation/hello-token         https://github.com/wormhole-foundation/hello-cctp",
+									"deliveryHash": "- the VAA hash of the deliveryVAA.",
+									"payload": "- an arbitrary message which was included in the delivery by the     requester. This message's signature will already have been verified (as long as msg.sender is the Wormhole Relayer contract)",
+									"sourceAddress": "- the (wormhole format) address on the sending chain which requested     this delivery.",
+									"sourceChain": "- the wormhole chain ID where this delivery was requested."
+								}
+							}
+						},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"gasEstimates": null,
+						"legacyAssembly": null,
+						"methodIdentifiers": {
+							"receiveWormholeMessages(bytes,bytes[],bytes32,uint16,bytes32)": "529dca32"
+						}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.24+commit.e11b9ed9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"payload\",\"type\":\"bytes\"},{\"internalType\":\"bytes[]\",\"name\":\"additionalMessages\",\"type\":\"bytes[]\"},{\"internalType\":\"bytes32\",\"name\":\"sourceAddress\",\"type\":\"bytes32\"},{\"internalType\":\"uint16\",\"name\":\"sourceChain\",\"type\":\"uint16\"},{\"internalType\":\"bytes32\",\"name\":\"deliveryHash\",\"type\":\"bytes32\"}],\"name\":\"receiveWormholeMessages\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"receiveWormholeMessages(bytes,bytes[],bytes32,uint16,bytes32)\":{\"params\":{\"additionalMessages\":\"- Additional messages which were requested to be included in this delivery.      Note: There are no contract-level guarantees that the messages in this array are what was requested      so **you should verify any sensitive information given here!**      For example, if a 'VaaKey' was specified on the source chain, then MAKE SURE the corresponding message here      has valid signatures (by calling `parseAndVerifyVM(message)` on the Wormhole core contract)      This field can be used to perform and relay TokenBridge or CCTP transfers, and there are example      usages of this at         https://github.com/wormhole-foundation/hello-token         https://github.com/wormhole-foundation/hello-cctp\",\"deliveryHash\":\"- the VAA hash of the deliveryVAA.\",\"payload\":\"- an arbitrary message which was included in the delivery by the     requester. This message's signature will already have been verified (as long as msg.sender is the Wormhole Relayer contract)\",\"sourceAddress\":\"- the (wormhole format) address on the sending chain which requested     this delivery.\",\"sourceChain\":\"- the wormhole chain ID where this delivery was requested.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"receiveWormholeMessages(bytes,bytes[],bytes32,uint16,bytes32)\":{\"notice\":\"When a `send` is performed with this contract as the target, this function will be     invoked by the WormholeRelayer contract NOTE: This function should be restricted such that only the Wormhole Relayer contract can call it. We also recommend that this function checks that `sourceChain` and `sourceAddress` are indeed who       you expect to have requested the calling of `send` on the source chain The invocation of this function corresponding to the `send` request will have msg.value equal   to the receiverValue specified in the send request. If the invocation of this function reverts or exceeds the gas limit   specified by the send requester, this delivery will result in a `ReceiverFailure`.\"}},\"notice\":\"Interface for a contract which can receive Wormhole messages.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"BRIDGE_PARTNERSHIP/src/interfaces/IWormholeReceiver.sol\":\"IWormholeReceiver\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"BRIDGE_PARTNERSHIP/src/interfaces/IWormholeReceiver.sol\":{\"keccak256\":\"0x5e492d502a4be6633cab7c4d0f65c1c90fef2f05a4fd591de896ef3c6d7794cf\",\"license\":\"Apache 2\",\"urls\":[\"bzz-raw://509831b21b066d67c75423cad68420946970f44581e540afa11b6678c68f7d17\",\"dweb:/ipfs/QmaWTnPcSVPq9c44V1ZdsBX8P1a6qjJst3Vy7oNcuAgBs6\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {
+							"receiveWormholeMessages(bytes,bytes[],bytes32,uint16,bytes32)": {
+								"notice": "When a `send` is performed with this contract as the target, this function will be     invoked by the WormholeRelayer contract NOTE: This function should be restricted such that only the Wormhole Relayer contract can call it. We also recommend that this function checks that `sourceChain` and `sourceAddress` are indeed who       you expect to have requested the calling of `send` on the source chain The invocation of this function corresponding to the `send` request will have msg.value equal   to the receiverValue specified in the send request. If the invocation of this function reverts or exceeds the gas limit   specified by the send requester, this delivery will result in a `ReceiverFailure`."
+							}
+						},
+						"notice": "Interface for a contract which can receive Wormhole messages.",
+						"version": 1
+					}
+				}
+			}
+		},
+		"sources": {
+			"BRIDGE_PARTNERSHIP/src/interfaces/IWormholeReceiver.sol": {
+				"ast": {
+					"absolutePath": "BRIDGE_PARTNERSHIP/src/interfaces/IWormholeReceiver.sol",
+					"exportedSymbols": {
+						"IWormholeReceiver": [
+							18
+						]
+					},
+					"id": 19,
+					"license": "Apache 2",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.8",
+								".0"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "40:23:0"
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"canonicalName": "IWormholeReceiver",
+							"contractDependencies": [],
+							"contractKind": "interface",
+							"documentation": {
+								"id": 2,
+								"nodeType": "StructuredDocumentation",
+								"src": "67:82:0",
+								"text": " @notice Interface for a contract which can receive Wormhole messages."
+							},
+							"fullyImplemented": false,
+							"id": 18,
+							"linearizedBaseContracts": [
+								18
+							],
+							"name": "IWormholeReceiver",
+							"nameLocation": "161:17:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"documentation": {
+										"id": 3,
+										"nodeType": "StructuredDocumentation",
+										"src": "186:2164:0",
+										"text": " @notice When a `send` is performed with this contract as the target, this function will be\n     invoked by the WormholeRelayer contract\n NOTE: This function should be restricted such that only the Wormhole Relayer contract can call it.\n We also recommend that this function checks that `sourceChain` and `sourceAddress` are indeed who\n       you expect to have requested the calling of `send` on the source chain\n The invocation of this function corresponding to the `send` request will have msg.value equal\n   to the receiverValue specified in the send request.\n If the invocation of this function reverts or exceeds the gas limit\n   specified by the send requester, this delivery will result in a `ReceiverFailure`.\n @param payload - an arbitrary message which was included in the delivery by the\n     requester. This message's signature will already have been verified (as long as msg.sender is the Wormhole Relayer contract)\n @param additionalMessages - Additional messages which were requested to be included in this delivery.\n      Note: There are no contract-level guarantees that the messages in this array are what was requested\n      so **you should verify any sensitive information given here!**\n      For example, if a 'VaaKey' was specified on the source chain, then MAKE SURE the corresponding message here\n      has valid signatures (by calling `parseAndVerifyVM(message)` on the Wormhole core contract)\n      This field can be used to perform and relay TokenBridge or CCTP transfers, and there are example\n      usages of this at\n         https://github.com/wormhole-foundation/hello-token\n         https://github.com/wormhole-foundation/hello-cctp\n @param sourceAddress - the (wormhole format) address on the sending chain which requested\n     this delivery.\n @param sourceChain - the wormhole chain ID where this delivery was requested.\n @param deliveryHash - the VAA hash of the deliveryVAA."
+									},
+									"functionSelector": "529dca32",
+									"id": 17,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "receiveWormholeMessages",
+									"nameLocation": "2365:23:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 15,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 5,
+												"mutability": "mutable",
+												"name": "payload",
+												"nameLocation": "2412:7:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 17,
+												"src": "2399:20:0",
+												"stateVariable": false,
+												"storageLocation": "memory",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes_memory_ptr",
+													"typeString": "bytes"
+												},
+												"typeName": {
+													"id": 4,
+													"name": "bytes",
+													"nodeType": "ElementaryTypeName",
+													"src": "2399:5:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes_storage_ptr",
+														"typeString": "bytes"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 8,
+												"mutability": "mutable",
+												"name": "additionalMessages",
+												"nameLocation": "2445:18:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 17,
+												"src": "2430:33:0",
+												"stateVariable": false,
+												"storageLocation": "memory",
+												"typeDescriptions": {
+													"typeIdentifier": "t_array$_t_bytes_memory_ptr_$dyn_memory_ptr",
+													"typeString": "bytes[]"
+												},
+												"typeName": {
+													"baseType": {
+														"id": 6,
+														"name": "bytes",
+														"nodeType": "ElementaryTypeName",
+														"src": "2430:5:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_bytes_storage_ptr",
+															"typeString": "bytes"
+														}
+													},
+													"id": 7,
+													"nodeType": "ArrayTypeName",
+													"src": "2430:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_array$_t_bytes_storage_$dyn_storage_ptr",
+														"typeString": "bytes[]"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 10,
+												"mutability": "mutable",
+												"name": "sourceAddress",
+												"nameLocation": "2482:13:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 17,
+												"src": "2474:21:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes32",
+													"typeString": "bytes32"
+												},
+												"typeName": {
+													"id": 9,
+													"name": "bytes32",
+													"nodeType": "ElementaryTypeName",
+													"src": "2474:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes32",
+														"typeString": "bytes32"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 12,
+												"mutability": "mutable",
+												"name": "sourceChain",
+												"nameLocation": "2513:11:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 17,
+												"src": "2506:18:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint16",
+													"typeString": "uint16"
+												},
+												"typeName": {
+													"id": 11,
+													"name": "uint16",
+													"nodeType": "ElementaryTypeName",
+													"src": "2506:6:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint16",
+														"typeString": "uint16"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 14,
+												"mutability": "mutable",
+												"name": "deliveryHash",
+												"nameLocation": "2543:12:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 17,
+												"src": "2535:20:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes32",
+													"typeString": "bytes32"
+												},
+												"typeName": {
+													"id": 13,
+													"name": "bytes32",
+													"nodeType": "ElementaryTypeName",
+													"src": "2535:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes32",
+														"typeString": "bytes32"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "2388:174:0"
+									},
+									"returnParameters": {
+										"id": 16,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "2579:0:0"
+									},
+									"scope": 18,
+									"src": "2356:224:0",
+									"stateMutability": "payable",
+									"virtual": false,
+									"visibility": "external"
+								}
+							],
+							"scope": 19,
+							"src": "151:2432:0",
+							"usedErrors": [],
+							"usedEvents": []
+						}
+					],
+					"src": "40:2545:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

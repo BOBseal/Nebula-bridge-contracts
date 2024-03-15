@@ -1,0 +1,634 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "OwnableInvalidOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "OwnableUnauthorizedAccount",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint16",
+						"name": "_dstChainId",
+						"type": "uint16"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint16",
+						"name": "_type",
+						"type": "uint16"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_minDstGas",
+						"type": "uint256"
+					}
+				],
+				"name": "SetMinDstGas",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "precrime",
+						"type": "address"
+					}
+				],
+				"name": "SetPrecrime",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint16",
+						"name": "_remoteChainId",
+						"type": "uint16"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "_path",
+						"type": "bytes"
+					}
+				],
+				"name": "SetTrustedRemote",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint16",
+						"name": "_remoteChainId",
+						"type": "uint16"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "_remoteAddress",
+						"type": "bytes"
+					}
+				],
+				"name": "SetTrustedRemoteAddress",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "DEFAULT_PAYLOAD_SIZE_LIMIT",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "_srcChainId",
+						"type": "uint16"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_srcAddress",
+						"type": "bytes"
+					}
+				],
+				"name": "forceResumeReceive",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "_version",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint16",
+						"name": "_chainId",
+						"type": "uint16"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_configType",
+						"type": "uint256"
+					}
+				],
+				"name": "getConfig",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "_remoteChainId",
+						"type": "uint16"
+					}
+				],
+				"name": "getTrustedRemoteAddress",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "_srcChainId",
+						"type": "uint16"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_srcAddress",
+						"type": "bytes"
+					}
+				],
+				"name": "isTrustedRemote",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "lzEndpoint",
+				"outputs": [
+					{
+						"internalType": "contract ILayerZeroEndpoint",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "_srcChainId",
+						"type": "uint16"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_srcAddress",
+						"type": "bytes"
+					},
+					{
+						"internalType": "uint64",
+						"name": "_nonce",
+						"type": "uint64"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_payload",
+						"type": "bytes"
+					}
+				],
+				"name": "lzReceive",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint16",
+						"name": "",
+						"type": "uint16"
+					}
+				],
+				"name": "minDstGasLookup",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "",
+						"type": "uint16"
+					}
+				],
+				"name": "payloadSizeLimitLookup",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "precrime",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "_version",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint16",
+						"name": "_chainId",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_configType",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_config",
+						"type": "bytes"
+					}
+				],
+				"name": "setConfig",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "_dstChainId",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint16",
+						"name": "_packetType",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_minGas",
+						"type": "uint256"
+					}
+				],
+				"name": "setMinDstGas",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "_dstChainId",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_size",
+						"type": "uint256"
+					}
+				],
+				"name": "setPayloadSizeLimit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_precrime",
+						"type": "address"
+					}
+				],
+				"name": "setPrecrime",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "_version",
+						"type": "uint16"
+					}
+				],
+				"name": "setReceiveVersion",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "_version",
+						"type": "uint16"
+					}
+				],
+				"name": "setSendVersion",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "_remoteChainId",
+						"type": "uint16"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_path",
+						"type": "bytes"
+					}
+				],
+				"name": "setTrustedRemote",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "_remoteChainId",
+						"type": "uint16"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_remoteAddress",
+						"type": "bytes"
+					}
+				],
+				"name": "setTrustedRemoteAddress",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "",
+						"type": "uint16"
+					}
+				],
+				"name": "trustedRemoteLookup",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"errors": {
+				"OwnableInvalidOwner(address)": [
+					{
+						"details": "The owner is not a valid owner account. (eg. `address(0)`)"
+					}
+				],
+				"OwnableUnauthorizedAccount(address)": [
+					{
+						"details": "The caller account is not authorized to perform an operation."
+					}
+				]
+			},
+			"kind": "dev",
+			"methods": {
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"BRIDGE_PARTNERSHIP/LZO/contracts/lzApp/LzApp.sol": "LzApp"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/LZO/contracts/libraries/BytesLib.sol": {
+			"keccak256": "0x7792f84cab13c1cfb572a558192ca3dd601615e1328d80130bd3e2784ac7eea4",
+			"license": "Unlicense",
+			"urls": [
+				"bzz-raw://04a8865cea811609366b80261cce9f348ae4d5839e591017b801764029dbccca",
+				"dweb:/ipfs/Qmet4ABJKcELrnwsikMPbRsBmH6b3hi7yBcpW7GT8j8wCh"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/LZO/contracts/lzApp/LzApp.sol": {
+			"keccak256": "0x7285ae7ef4806487212c1e02f98974b7ef98fce928f29ce7a859c67752b29745",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f019319de802284a5578cf85e1276541ecdc126f31ca7e74695e569e395bdabf",
+				"dweb:/ipfs/QmZZzJUQfG2xmGm6vEjiKPkhyU81FzTSg511SmnYQDECjb"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/LZO/contracts/lzApp/interfaces/ILayerZeroEndpoint.sol": {
+			"keccak256": "0x038a0822ff0ed7840f1871e33f02ab2f86f1e15d49569d1775aa5bc9ec89faf5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a22bc283811bd86986b123f724c4f16257513d8f063d54aaca34a25340385324",
+				"dweb:/ipfs/QmQdgyGNHe3xZre3cyPja4mzkTeVzrmb24Qi6YqzpC49cz"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/LZO/contracts/lzApp/interfaces/ILayerZeroReceiver.sol": {
+			"keccak256": "0x66647bb1e973a693f4420f294688283cca5235ed950dc7a6f5f4394bf9ecf3c0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://09af5e180d289ce612cfbcfc075b93f1657603a7ca6090da34b5aa93596e9b62",
+				"dweb:/ipfs/QmekaVzELtgWHzEuQwuTa5TUJSMPyg3TCG6oocMj1nABQn"
+			]
+		},
+		"BRIDGE_PARTNERSHIP/LZO/contracts/lzApp/interfaces/ILayerZeroUserApplicationConfig.sol": {
+			"keccak256": "0x3d1c7a12c577b3339252875a90da60c59617f8b299f88e35cd8b9b190b762a73",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8cab1e719f06c9758b00e4b056e9f18dc0b3185a5859d1f9aa7acfc21c68703b",
+				"dweb:/ipfs/QmYmdCzQxmRzUKSAFhBkiY7R2AZtzdsL7SD8jUkzwnJkAw"
+			]
+		}
+	},
+	"version": 1
+}

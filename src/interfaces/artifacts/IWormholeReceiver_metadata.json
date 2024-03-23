@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.24+commit.e11b9ed9"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -67,7 +67,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"BRIDGE_PARTNERSHIP/src/interfaces/IWormholeReceiver.sol": "IWormholeReceiver"
+			"Nebula-bridge-contracts/src/interfaces/IWormholeReceiver.sol": "IWormholeReceiver"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -81,7 +81,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"BRIDGE_PARTNERSHIP/src/interfaces/IWormholeReceiver.sol": {
+		"Nebula-bridge-contracts/src/interfaces/IWormholeReceiver.sol": {
 			"keccak256": "0x5e492d502a4be6633cab7c4d0f65c1c90fef2f05a4fd591de896ef3c6d7794cf",
 			"license": "Apache 2",
 			"urls": [

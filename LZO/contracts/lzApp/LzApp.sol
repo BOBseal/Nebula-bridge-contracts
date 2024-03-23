@@ -17,7 +17,7 @@ abstract contract LzApp is Ownable, ILayerZeroReceiver, ILayerZeroUserApplicatio
     // ua can not send payload larger than this by default, but it can be changed by the ua owner
     uint public constant DEFAULT_PAYLOAD_SIZE_LIMIT = 10000;
 
-    ILayerZeroEndpoint public immutable lzEndpoint;
+    ILayerZeroEndpoint public lzEndpoint;
     mapping(uint16 => bytes) public trustedRemoteLookup;
     mapping(uint16 => mapping(uint16 => uint)) public minDstGasLookup;
     mapping(uint16 => uint) public payloadSizeLimitLookup;
@@ -131,18 +131,6 @@ abstract contract LzApp is Ownable, ILayerZeroReceiver, ILayerZeroUserApplicatio
 
     function forceResumeReceive(uint16 _srcChainId, bytes calldata _srcAddress) external override onlyOwner {
         lzEndpoint.forceResumeReceive(_srcChainId, _srcAddress);
-    }
-
-    // _path = abi.encodePacked(remoteAddress, localAddress)
-    // this function set the trusted path for the cross-chain communication
-    function setTrustedRemote(uint16 _remoteChainId, bytes calldata _path) external onlyOwner {
-        trustedRemoteLookup[_remoteChainId] = _path;
-        emit SetTrustedRemote(_remoteChainId, _path);
-    }
-
-    function setTrustedRemoteAddress(uint16 _remoteChainId, bytes calldata _remoteAddress) external onlyOwner {
-        trustedRemoteLookup[_remoteChainId] = abi.encodePacked(_remoteAddress, address(this));
-        emit SetTrustedRemoteAddress(_remoteChainId, _remoteAddress);
     }
 
     function getTrustedRemoteAddress(uint16 _remoteChainId) external view returns (bytes memory) {

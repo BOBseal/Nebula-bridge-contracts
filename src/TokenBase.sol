@@ -144,7 +144,7 @@ abstract contract TokenReceiver is TokenBase {
             require(
                 transfer.to == toWormholeFormat(address(this)) &&
                     transfer.toChain == wormhole.chainId(),
-                "Token was not sent to this address"
+                "Token not sent to this address"
             );
 
             tokenBridge.completeTransferWithPayload(additionalVaas[i]);

@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.17+commit.8df45f5f"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -230,21 +230,21 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"BRIDGE_PARTNERSHIP/src/interfaces/IERC20.sol": "IERC20"
+			"Nebula-bridge-contracts/src/interfaces/IERC20.sol": "IERC20"
 		},
-		"evmVersion": "london",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
+			"enabled": true,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"BRIDGE_PARTNERSHIP/src/interfaces/IERC20.sol": {
+		"Nebula-bridge-contracts/src/interfaces/IERC20.sol": {
 			"keccak256": "0x206e252911fb60d0d6a54fb657b64344c33fa237ddb8553aa668a24d1856a7c2",
 			"license": "MIT",
 			"urls": [

@@ -18,7 +18,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"BRIDGE_PARTNERSHIP/lib.d.sol": "Inputs"
+			"Nebula-bridge-contracts/lib.d.sol": "Inputs"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -32,12 +32,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"BRIDGE_PARTNERSHIP/lib.d.sol": {
-			"keccak256": "0x2875da2b3be594eb327b762fb8e8580e50c9b1d2850065e38c5ad688d960bdfa",
+		"Nebula-bridge-contracts/lib.d.sol": {
+			"keccak256": "0xb70ddf7e6698bdc29609df4720b646e8440ffc71f953b29c1eaa433c52ef8096",
 			"license": "Unlicensed",
 			"urls": [
-				"bzz-raw://d074d6b0e3e77088e6d0bfc6957b4d6f8b86d94990be1da9aabbabb2785535db",
-				"dweb:/ipfs/QmNa5Fk1mSnYpZhtmB65cM9gGQDCw8eyadAQpPKAQh96Aj"
+				"bzz-raw://b1cc737edba3f9878edd93fdbbf007ac2cf975af0690f622c118db18385a8505",
+				"dweb:/ipfs/QmbtCFd34MFM1KiaGd1AjMBtfr5zH1rWZ9udHJmnQUauxi"
 			]
 		}
 	},

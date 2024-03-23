@@ -112,8 +112,7 @@ contract DUALBRIDGE is ERC20Bridge, LZOEtherBridgeV1{
         uint64 ,
         bytes memory payload
     ) internal override{
-        uint n = users[msg.sender].data.bridgeIn;
-        users[msg.sender].data.bridgeOut =n+1;
+        //uint n = users[msg.sender].data.bridgeIn;
         (address to , uint amount ) = abi.decode(payload,(address , uint256));
         
         Structs.EthBridge memory data = Structs.EthBridge({
@@ -128,8 +127,9 @@ contract DUALBRIDGE is ERC20Bridge, LZOEtherBridgeV1{
         Structs.LatestBridge storage bridge = LatestBridges[tBridgeIndex];
         bridge.isEth = true;
         bridge.ethbridge = data;
+        users[to].maps.ethBridgesIn[users[to].data.ethBridgeIn][frmCh] = data;
+        users[to].data.ethBridgeIn +=1;
         tBridgeIndex += 1;
-        users[msg.sender].maps.ethBridgesIn[n][frmCh] = data;
     }
 
     // erc20 reciever
@@ -141,8 +141,7 @@ contract DUALBRIDGE is ERC20Bridge, LZOEtherBridgeV1{
         bytes32 dh,// deliveryHash
         bytes[] memory additionalVaas
     ) internal override onlyWormholeRelayer{
-        uint n = users[msg.sender].data.bridgeIn;
-        users[msg.sender].data.bridgeOut =n+1;
+        
         super.receivePayloadAndTokens(payload,receivedTokens, srcA, ch, dh, additionalVaas);
         (address to ) = abi.decode(payload,(address));
         Structs.TokenBridge memory data = Structs.TokenBridge({
@@ -159,8 +158,9 @@ contract DUALBRIDGE is ERC20Bridge, LZOEtherBridgeV1{
         bridge__.tokenbridge = data;
         bridge__.additionalVaas = additionalVaas;
         tBridgeIndex += 1;
-        users[msg.sender].maps.tokenBridgeIns[dh] = data;
-        users[msg.sender].maps.hashes[n][ch] = dh;
+        users[to].maps.tokenBridgeIns[dh] = data;
+        users[to].maps.hashes[users[to].data.tokenBridgeIn][ch] = dh;
+        users[to].data.tokenBridgeIn +=1;
     }
 
     //only grayzone can set the address to which they recieve profit sharing 
@@ -171,8 +171,13 @@ contract DUALBRIDGE is ERC20Bridge, LZOEtherBridgeV1{
     }
 
     // get total cost in ether fee to send with bridge function for erc 20 bridges => uses wormhole
-    function getErc20Cost(uint16 wormholeId,uint256 gasUnits) public view returns(uint256 cost){
-        cost = _erc20FeeQuote(wormholeId ,gasUnits) + states.bridgeFeeEther;
+    function getErc20Cost(uint16 wormholeId,uint256 gasUnits) public view returns(uint256){
+        (uint cost, ) = wormholeRelayer.quoteEVMDeliveryPrice(
+            wormholeId,
+            0,
+            gasUnits
+        );
+        return (cost + states.bridgeFeeEther + wormhole.messageFee());
     }
 
     // get total cost in ether fee + amount eth to send with bridge function for native Eth bridges => uses lz0
@@ -193,14 +198,14 @@ contract DUALBRIDGE is ERC20Bridge, LZOEtherBridgeV1{
     */
     function bridgeErc20(
         Inputs.ERC20INPUT memory params // check library Inputs for the data structure
-    ) public payable returns(bool z){
+    ) public payable returns(uint64 z){
         uint256 amount = params.amt;
         if((wormEndpoints[params.targetChain] == address(0) && amount == 0 && params.token == address(0))||
             (msg.value < getErc20Cost(params.targetChain,params.dstGas))
         ){
             revert Structs.WrongFeeOrParams();
         }
-        uint n = users[msg.sender].data.bridgeOut;
+        
         uint256 fee_= states.percentFee ; 
         bool x = IERC20(params.token).transferFrom(msg.sender, address(this), amount);
         if(!x){revert("");}
@@ -209,27 +214,43 @@ contract DUALBRIDGE is ERC20Bridge, LZOEtherBridgeV1{
             amount = params.amt - (params.amt * fee_/1000);
             fee[params.token] += params.amt * fee_/1000;
         }
-        z = _bridgeErc20(params.targetChain ,wormEndpoints[params.targetChain], params.recipient , amount , params.token,params.dstGas);
-        if(!z){
-            revert("");
-        }
-
+        bytes memory payload = abi.encode(params.recipient);
+        
+        z = sendTokenWithPayloadToEvm(
+            params.targetChain,
+            wormEndpoints[params.targetChain], // address (on targetChain) to send token and payload to
+            payload,
+            0,
+            params.dstGas, // gas units
+            params.token, // address of IERC20 token contract
+            amount, // amount
+            wormhole.chainId(), // refund to sending chain
+            msg.sender // refund to sender 
+        );
+        
         baseFee += (states.bridgeFeeEther) - (states.bridgeFeeEther * (grayshare / 100));
-        users[msg.sender].data.bridgeOut =n+1;
-        Structs.TokenBridge memory data = Structs.TokenBridge({
-            _wormSrcCh: wormhole.chainId(),
-            _wormDstChId: params.targetChain,
-            token:params.token,
-            amount:amount,
-            dstReciver:params.recipient,
-            timeStamp: block.timestamp,
-            delivered:true
-        });
-        users[msg.sender].maps.tokenBridgeOuts[n][params.targetChain] = data;
-        users[msg.sender].data.points += states.pointPerTx;
-        states.totalPoints += states.pointPerTx ;
-        users[msg.sender].maps.outVolToken[params.token][params.targetChain] += amount;
-        _processRef(msg.sender,params.referal);
+
+        //refund user incase of failed delivery attempt to relayer
+        if(z == uint64(0)){
+            IERC20(params.token).transfer(msg.sender, amount);
+        } else {
+            Structs.TokenBridge memory data = Structs.TokenBridge({
+                _wormSrcCh: wormhole.chainId(),
+                _wormDstChId: params.targetChain,
+                token:params.token,
+                amount:amount,
+                dstReciver:params.recipient,
+                timeStamp: block.timestamp,
+                delivered:true
+            });
+
+            users[msg.sender].maps.tokenBridgeOuts[users[msg.sender].data.tokenBridgeOut][params.targetChain] = data;
+            users[msg.sender].data.points += states.pointPerTx;
+            states.totalPoints += states.pointPerTx ;
+            users[msg.sender].data.tokenBridgeOut += 1;
+            users[msg.sender].maps.outVolToken[params.token][params.targetChain] += amount;
+            _processRef(msg.sender,params.referal);
+        }
     }
 
     function bridgeEth(
@@ -241,8 +262,6 @@ contract DUALBRIDGE is ERC20Bridge, LZOEtherBridgeV1{
         }
         uint256 f = states.bridgeFeeEther;
         uint256 fee_= states.percentFee; 
-        uint n = users[msg.sender].data.bridgeOut;
-        users[msg.sender].data.bridgeOut =n+1;
         if(f>0){(f,) = _processPartner(f);}
         if(fee_>0){
             amount = params.amt - (params.amt * fee_/1000);
@@ -263,7 +282,8 @@ contract DUALBRIDGE is ERC20Bridge, LZOEtherBridgeV1{
         });
         users[msg.sender].data.points += states.pointPerTx;
         states.totalPoints+=states.pointPerTx;
-        users[msg.sender].maps.ethBridgesOut[n][params.toChainId] = data;
+        users[msg.sender].maps.ethBridgesOut[users[msg.sender].data.ethBridgeOut][params.toChainId] = data;
+        users[msg.sender].data.ethBridgeOut +=1;
         users[msg.sender].maps.outVolEth[params.toChainId] += amount;
         _processRef(msg.sender,params.referal);
     }
@@ -278,28 +298,32 @@ contract DUALBRIDGE is ERC20Bridge, LZOEtherBridgeV1{
     }
 
     function _processRef (address refered , address ref) internal {
-        if(users[refered].data.bridgeIn==0 && users[refered].data.bridgeOut == 0 && !users[refered].referalData.refered){
+        if(((users[refered].data.ethBridgeIn==0 && users[refered].data.ethBridgeOut == 0)||(users[refered].data.tokenBridgeIn==0 && users[refered].data.tokenBridgeOut == 0)) && !users[refered].referalData.refered){
             users[refered].referalData.refered = true;
             users[refered].referalData.referer = ref;
             users[ref].data.totalRef +=1; 
         }
         if(users[refered].referalData.referer !=address(0)){
-            users[users[refered].referalData.referer].data.points += (states.pointPerTx / 2);    
+            users[users[refered].referalData.referer].data.points += states.pointPerTx;    
         }
     }
 
     // fee withdrawal functions
 
     function withdrawAccruedFee(address token , uint256 amount) public onlyOwner{
-        require(fee[token] >=0);
+        require(fee[token] >=amount);
             fee[token] -= amount;
             IERC20(token).transfer(msg.sender,amount);
     }
 
     function withdrawAccruedFeeEth(uint256 amount) public onlyOwner{
-        require(fee[address(0)] >=0);
+        require(fee[address(0)] >=amount);
         fee[address(0)] -= amount;
         payable(msg.sender).transfer(amount);
     }
-
+    // directly sent ether is considered to fee pool
+    
+    receive() external payable {
+        fee[address(0)] += msg.value;
+    }
 } 

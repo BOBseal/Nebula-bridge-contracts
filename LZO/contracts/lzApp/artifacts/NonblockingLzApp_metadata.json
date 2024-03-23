@@ -712,7 +712,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"BRIDGE_PARTNERSHIP/LZO/contracts/lzApp/NonblockingLzApp.sol": "NonblockingLzApp"
+			"Nebula-bridge-contracts/LZO/contracts/lzApp/NonblockingLzApp.sol": "NonblockingLzApp"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -742,7 +742,7 @@
 				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
 			]
 		},
-		"BRIDGE_PARTNERSHIP/LZO/contracts/libraries/BytesLib.sol": {
+		"Nebula-bridge-contracts/LZO/contracts/libraries/BytesLib.sol": {
 			"keccak256": "0x7792f84cab13c1cfb572a558192ca3dd601615e1328d80130bd3e2784ac7eea4",
 			"license": "Unlicense",
 			"urls": [
@@ -750,7 +750,7 @@
 				"dweb:/ipfs/Qmet4ABJKcELrnwsikMPbRsBmH6b3hi7yBcpW7GT8j8wCh"
 			]
 		},
-		"BRIDGE_PARTNERSHIP/LZO/contracts/libraries/ExcessivelySafeCall.sol": {
+		"Nebula-bridge-contracts/LZO/contracts/libraries/ExcessivelySafeCall.sol": {
 			"keccak256": "0x7c99d40e0c339d5db9548b42b7a6c5e7626fe87357735a086c1989266ca46365",
 			"license": "MIT OR Apache-2.0",
 			"urls": [
@@ -758,7 +758,7 @@
 				"dweb:/ipfs/QmYAZ15ihv1VyYUsk7sytMzWuCornczSnLNNMmirSn6tDv"
 			]
 		},
-		"BRIDGE_PARTNERSHIP/LZO/contracts/lzApp/LzApp.sol": {
+		"Nebula-bridge-contracts/LZO/contracts/lzApp/LzApp.sol": {
 			"keccak256": "0x7285ae7ef4806487212c1e02f98974b7ef98fce928f29ce7a859c67752b29745",
 			"license": "MIT",
 			"urls": [
@@ -766,7 +766,7 @@
 				"dweb:/ipfs/QmZZzJUQfG2xmGm6vEjiKPkhyU81FzTSg511SmnYQDECjb"
 			]
 		},
-		"BRIDGE_PARTNERSHIP/LZO/contracts/lzApp/NonblockingLzApp.sol": {
+		"Nebula-bridge-contracts/LZO/contracts/lzApp/NonblockingLzApp.sol": {
 			"keccak256": "0xbf9711f85fa4e1677141140c0941ce1bd8b88523bf2dbfb43baa709844ef993f",
 			"license": "MIT",
 			"urls": [
@@ -774,7 +774,7 @@
 				"dweb:/ipfs/QmVj4Vff7tqb2ipcYs7XWjdrBvyZUZGnKQEUWqGypvxmRd"
 			]
 		},
-		"BRIDGE_PARTNERSHIP/LZO/contracts/lzApp/interfaces/ILayerZeroEndpoint.sol": {
+		"Nebula-bridge-contracts/LZO/contracts/lzApp/interfaces/ILayerZeroEndpoint.sol": {
 			"keccak256": "0x038a0822ff0ed7840f1871e33f02ab2f86f1e15d49569d1775aa5bc9ec89faf5",
 			"license": "MIT",
 			"urls": [
@@ -782,7 +782,7 @@
 				"dweb:/ipfs/QmQdgyGNHe3xZre3cyPja4mzkTeVzrmb24Qi6YqzpC49cz"
 			]
 		},
-		"BRIDGE_PARTNERSHIP/LZO/contracts/lzApp/interfaces/ILayerZeroReceiver.sol": {
+		"Nebula-bridge-contracts/LZO/contracts/lzApp/interfaces/ILayerZeroReceiver.sol": {
 			"keccak256": "0x66647bb1e973a693f4420f294688283cca5235ed950dc7a6f5f4394bf9ecf3c0",
 			"license": "MIT",
 			"urls": [
@@ -790,7 +790,7 @@
 				"dweb:/ipfs/QmekaVzELtgWHzEuQwuTa5TUJSMPyg3TCG6oocMj1nABQn"
 			]
 		},
-		"BRIDGE_PARTNERSHIP/LZO/contracts/lzApp/interfaces/ILayerZeroUserApplicationConfig.sol": {
+		"Nebula-bridge-contracts/LZO/contracts/lzApp/interfaces/ILayerZeroUserApplicationConfig.sol": {
 			"keccak256": "0x3d1c7a12c577b3339252875a90da60c59617f8b299f88e35cd8b9b190b762a73",
 			"license": "MIT",
 			"urls": [

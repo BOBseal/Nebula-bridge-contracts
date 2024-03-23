@@ -238,7 +238,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"BRIDGE_PARTNERSHIP/src/interfaces/IWormholeRelayer.sol": "IWormholeRelayerDelivery"
+			"Nebula-bridge-contracts/src/interfaces/IWormholeRelayer.sol": "IWormholeRelayerDelivery"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -252,7 +252,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"BRIDGE_PARTNERSHIP/src/interfaces/IWormholeRelayer.sol": {
+		"Nebula-bridge-contracts/src/interfaces/IWormholeRelayer.sol": {
 			"keccak256": "0xaa4afc2866e54ed9c9540e8ac4872d6ab9527884243087997a7d00f444004efc",
 			"license": "Apache 2",
 			"urls": [

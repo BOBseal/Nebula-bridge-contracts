@@ -481,9 +481,9 @@
 				"name": "bridgeErc20",
 				"outputs": [
 					{
-						"internalType": "bool",
+						"internalType": "uint64",
 						"name": "z",
-						"type": "bool"
+						"type": "uint64"
 					}
 				],
 				"stateMutability": "payable",
@@ -656,7 +656,7 @@
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "cost",
+						"name": "",
 						"type": "uint256"
 					}
 				],
@@ -997,12 +997,22 @@
 						"components": [
 							{
 								"internalType": "uint256",
-								"name": "bridgeOut",
+								"name": "ethBridgeOut",
 								"type": "uint256"
 							},
 							{
 								"internalType": "uint256",
-								"name": "bridgeIn",
+								"name": "ethBridgeIn",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "tokenBridgeOut",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "tokenBridgeIn",
 								"type": "uint256"
 							},
 							{
@@ -1492,42 +1502,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "uint16",
-						"name": "_remoteChainId",
-						"type": "uint16"
-					},
-					{
-						"internalType": "bytes",
-						"name": "_path",
-						"type": "bytes"
-					}
-				],
-				"name": "setTrustedRemote",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint16",
-						"name": "_remoteChainId",
-						"type": "uint16"
-					},
-					{
-						"internalType": "bytes",
-						"name": "_remoteAddress",
-						"type": "bytes"
-					}
-				],
-				"name": "setTrustedRemoteAddress",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
 				"inputs": [],
 				"name": "tBridgeIndex",
 				"outputs": [
@@ -1699,7 +1673,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"BRIDGE_CONTRACTS/dualBridge.sol": "DUALBRIDGE"
+			"Nebula-bridge-contracts/dualBridge.sol": "DUALBRIDGE"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -1737,7 +1711,7 @@
 				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
 			]
 		},
-		"BRIDGE_CONTRACTS/LZO/contracts/libraries/BytesLib.sol": {
+		"Nebula-bridge-contracts/LZO/contracts/libraries/BytesLib.sol": {
 			"keccak256": "0x7792f84cab13c1cfb572a558192ca3dd601615e1328d80130bd3e2784ac7eea4",
 			"license": "Unlicense",
 			"urls": [
@@ -1745,7 +1719,7 @@
 				"dweb:/ipfs/Qmet4ABJKcELrnwsikMPbRsBmH6b3hi7yBcpW7GT8j8wCh"
 			]
 		},
-		"BRIDGE_CONTRACTS/LZO/contracts/libraries/ExcessivelySafeCall.sol": {
+		"Nebula-bridge-contracts/LZO/contracts/libraries/ExcessivelySafeCall.sol": {
 			"keccak256": "0x7c99d40e0c339d5db9548b42b7a6c5e7626fe87357735a086c1989266ca46365",
 			"license": "MIT OR Apache-2.0",
 			"urls": [
@@ -1753,15 +1727,15 @@
 				"dweb:/ipfs/QmYAZ15ihv1VyYUsk7sytMzWuCornczSnLNNMmirSn6tDv"
 			]
 		},
-		"BRIDGE_CONTRACTS/LZO/contracts/lzApp/LzApp.sol": {
-			"keccak256": "0x7285ae7ef4806487212c1e02f98974b7ef98fce928f29ce7a859c67752b29745",
+		"Nebula-bridge-contracts/LZO/contracts/lzApp/LzApp.sol": {
+			"keccak256": "0x53ba33c4930502b5d4cb9be3c4e659225b0dad6f029e13ad963d022a51a6b287",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f019319de802284a5578cf85e1276541ecdc126f31ca7e74695e569e395bdabf",
-				"dweb:/ipfs/QmZZzJUQfG2xmGm6vEjiKPkhyU81FzTSg511SmnYQDECjb"
+				"bzz-raw://50f80ad0436e54519d6e2f67a8f2547a09d38a5fc31a1aeb1cc34531ff9e7e32",
+				"dweb:/ipfs/Qmc4b9HWpFDHDBtoBPg88nRuVHC5SaTqkaCwkKvqAQjhU5"
 			]
 		},
-		"BRIDGE_CONTRACTS/LZO/contracts/lzApp/NonblockingLzApp.sol": {
+		"Nebula-bridge-contracts/LZO/contracts/lzApp/NonblockingLzApp.sol": {
 			"keccak256": "0xbf9711f85fa4e1677141140c0941ce1bd8b88523bf2dbfb43baa709844ef993f",
 			"license": "MIT",
 			"urls": [
@@ -1769,7 +1743,7 @@
 				"dweb:/ipfs/QmVj4Vff7tqb2ipcYs7XWjdrBvyZUZGnKQEUWqGypvxmRd"
 			]
 		},
-		"BRIDGE_CONTRACTS/LZO/contracts/lzApp/interfaces/ILayerZeroEndpoint.sol": {
+		"Nebula-bridge-contracts/LZO/contracts/lzApp/interfaces/ILayerZeroEndpoint.sol": {
 			"keccak256": "0x038a0822ff0ed7840f1871e33f02ab2f86f1e15d49569d1775aa5bc9ec89faf5",
 			"license": "MIT",
 			"urls": [
@@ -1777,7 +1751,7 @@
 				"dweb:/ipfs/QmQdgyGNHe3xZre3cyPja4mzkTeVzrmb24Qi6YqzpC49cz"
 			]
 		},
-		"BRIDGE_CONTRACTS/LZO/contracts/lzApp/interfaces/ILayerZeroReceiver.sol": {
+		"Nebula-bridge-contracts/LZO/contracts/lzApp/interfaces/ILayerZeroReceiver.sol": {
 			"keccak256": "0x66647bb1e973a693f4420f294688283cca5235ed950dc7a6f5f4394bf9ecf3c0",
 			"license": "MIT",
 			"urls": [
@@ -1785,7 +1759,7 @@
 				"dweb:/ipfs/QmekaVzELtgWHzEuQwuTa5TUJSMPyg3TCG6oocMj1nABQn"
 			]
 		},
-		"BRIDGE_CONTRACTS/LZO/contracts/lzApp/interfaces/ILayerZeroUserApplicationConfig.sol": {
+		"Nebula-bridge-contracts/LZO/contracts/lzApp/interfaces/ILayerZeroUserApplicationConfig.sol": {
 			"keccak256": "0x3d1c7a12c577b3339252875a90da60c59617f8b299f88e35cd8b9b190b762a73",
 			"license": "MIT",
 			"urls": [
@@ -1793,109 +1767,109 @@
 				"dweb:/ipfs/QmYmdCzQxmRzUKSAFhBkiY7R2AZtzdsL7SD8jUkzwnJkAw"
 			]
 		},
-		"BRIDGE_CONTRACTS/dualBridge.sol": {
-			"keccak256": "0x43ebddbbbfcf61e1c1c22e9ddeceaed6efaf23338053503e320d1190f487ca68",
+		"Nebula-bridge-contracts/dualBridge.sol": {
+			"keccak256": "0x90d3125c390e4ecbcf201cbb18a7da7053664f1770bd2a099eecdf9b2a8e184d",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://762d4601a2b6f9e5746f41a2badf12234c37972b97fe2714454b7faa92072c30",
-				"dweb:/ipfs/QmQoLD7sgizGVpmCrXSoha8SJ4yGh7G1ahQA4gT85835sb"
+				"bzz-raw://75eba1ee2fd5d301a5310a9d047bfe75b9088eea5337be3c278d4c04c8319901",
+				"dweb:/ipfs/QmZNSWHDmDQzpsKbRQRWaziVbPh9CjLRxBXxGEvDAxNes5"
 			]
 		},
-		"BRIDGE_CONTRACTS/erc20Bridge.sol": {
-			"keccak256": "0xceeaf0c7c9ec71df377d17ea3e7de222cfdd9c44ac92efa948c8485ea1a6a3f8",
+		"Nebula-bridge-contracts/erc20Bridge.sol": {
+			"keccak256": "0x2c635ebd1f353d697b78f6bf8ebfcf69c9dbb7ba1e9b49e92ac66f9b8d71c5bc",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://19ea7a7b8f67907d7db665cfff64ac0d9dfba91a71c5c330be07751b2afd462a",
-				"dweb:/ipfs/QmQYkUJzocU2GKQ6h59WdqHLMSP6SuPh63SyjqSEZJiXei"
+				"bzz-raw://980bae2beb9c74a5b76a54dea40aa224ea941a02fa1a4a1d757dec184fbe2c63",
+				"dweb:/ipfs/QmXnTKQ4xPbG2Smp34jdB2Yyc9M4zfDuj4xbwc4RtV3oW3"
 			]
 		},
-		"BRIDGE_CONTRACTS/ethNativeBridge.sol": {
-			"keccak256": "0xddf6ca01f7fc9111917a67a8e0d6632b090e455e9ff608b23da64577554dbcf8",
+		"Nebula-bridge-contracts/ethNativeBridge.sol": {
+			"keccak256": "0x0d8bff86656fc73fea6b47184fbef9dab2b786d1aa4c3e5213b0d3d3813a2a9f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://875e38e7ef0013b0e6fabafc4d50090832a77c7da12f38da673e81fb4790d031",
-				"dweb:/ipfs/QmbVYGXWSuoevpVpiiKynqcKe98HiZ6tzgbqr2NHE1C66W"
+				"bzz-raw://e4289631adc90fe6608b4cb4b69e715c65b9784e81b8bab452fa6bd7379dc06c",
+				"dweb:/ipfs/QmfNadz76LAbQvv5ZoHL3Y1kTMa3ooFhGVZXSfLVdXgKu4"
 			]
 		},
-		"BRIDGE_CONTRACTS/lib.d.sol": {
-			"keccak256": "0x2875da2b3be594eb327b762fb8e8580e50c9b1d2850065e38c5ad688d960bdfa",
+		"Nebula-bridge-contracts/lib.d.sol": {
+			"keccak256": "0xb70ddf7e6698bdc29609df4720b646e8440ffc71f953b29c1eaa433c52ef8096",
 			"license": "Unlicensed",
 			"urls": [
-				"bzz-raw://d074d6b0e3e77088e6d0bfc6957b4d6f8b86d94990be1da9aabbabb2785535db",
-				"dweb:/ipfs/QmNa5Fk1mSnYpZhtmB65cM9gGQDCw8eyadAQpPKAQh96Aj"
+				"bzz-raw://b1cc737edba3f9878edd93fdbbf007ac2cf975af0690f622c118db18385a8505",
+				"dweb:/ipfs/QmbtCFd34MFM1KiaGd1AjMBtfr5zH1rWZ9udHJmnQUauxi"
 			]
 		},
-		"BRIDGE_CONTRACTS/src/Base.sol": {
+		"Nebula-bridge-contracts/src/Base.sol": {
 			"keccak256": "0x249d3dcd47a4f9183fa6aff8f1c75956cf54c217481177725ff2fd93f49c59c3",
 			"urls": [
 				"bzz-raw://aa0ceb0ac96ace95d5bbfc369577baec10d02ba33b514d10b868b8f48c2e0b0a",
 				"dweb:/ipfs/QmWPeQGpcu7SvzHmEnLybwJ6pGwzARKDpQYxVRbopRHK1o"
 			]
 		},
-		"BRIDGE_CONTRACTS/src/CCTPAndTokenBase.sol": {
+		"Nebula-bridge-contracts/src/CCTPAndTokenBase.sol": {
 			"keccak256": "0x4c2b579e45cd567796c6639d4a1b7332e196343b2b0b351d4b2f1b7eb9a5de15",
 			"urls": [
 				"bzz-raw://ead29a9e0ccf4f0559c6aacf2dff6654b33e2a897c96b44c8a601d51a102e3b6",
 				"dweb:/ipfs/QmQqiw27bAZUMZG2uMhSUnfxp9SVRpi25VGGnkTqw6MYEj"
 			]
 		},
-		"BRIDGE_CONTRACTS/src/CCTPBase.sol": {
+		"Nebula-bridge-contracts/src/CCTPBase.sol": {
 			"keccak256": "0xb0cb70d96d3c57421feca6842eab200246abcfcd1da1d53003449c9f517b9b36",
 			"urls": [
 				"bzz-raw://b12d2fa5425eaf7bfb6d5c7c2f949dbd50c11939f4636a64cd1b440ab4010999",
 				"dweb:/ipfs/QmZZoGiQPRTCZtmjxsTzcd55wCkiriPiBPFU911XP3536i"
 			]
 		},
-		"BRIDGE_CONTRACTS/src/TokenBase.sol": {
-			"keccak256": "0x3b5fb0a5f7771786872b6860c4d3da6ee7bf25b8056cf3d6698a6e0249b93e6c",
+		"Nebula-bridge-contracts/src/TokenBase.sol": {
+			"keccak256": "0x777830411b4b60c069cf4903158ef1997726180bc27a3fe2c07c38801c7d4003",
 			"urls": [
-				"bzz-raw://01d3397960486a2d66765b317d97f9f2f804a77c324ca9bac680d05f1ca647e9",
-				"dweb:/ipfs/QmeAT4kfAqE1YLT4Goe24bBNLPZksBZ4nJmQoKpHo6Js2g"
+				"bzz-raw://d75ad38857586f62b5c306a9882c145ae15c8fcffbd5f5ec7c40a677ddf58a7a",
+				"dweb:/ipfs/QmVLnywxNvVibokZyCPn3n356drrQW7JgyEeuc9xtgtoQu"
 			]
 		},
-		"BRIDGE_CONTRACTS/src/Utils.sol": {
+		"Nebula-bridge-contracts/src/Utils.sol": {
 			"keccak256": "0x2cfbe9804905a7ed86586add8316eed5b56421ed9d06637638448c19d85a9b0c",
 			"urls": [
 				"bzz-raw://abf5bf5f020206721a087d5c184fe7184d1f6709f98aca9fd8222e5c73a5d659",
 				"dweb:/ipfs/QmdjQPtSXYgvEWRb74C5Tg56961PbmkvRo2NdUFPqLTdBB"
 			]
 		},
-		"BRIDGE_CONTRACTS/src/WormholeRelayerSDK.sol": {
+		"Nebula-bridge-contracts/src/WormholeRelayerSDK.sol": {
 			"keccak256": "0x39b2a67c047941692c560b01198cfa5e24d326c11c23ae6b420571849ae80d0c",
 			"urls": [
 				"bzz-raw://37d655ea5d15012a32f05f08151d5cb597065b5af6102060c2f7836b32356e25",
 				"dweb:/ipfs/QmYNenC57JECfqSmjnXa59yxkmPjTmSi6fh53XC343d3ru"
 			]
 		},
-		"BRIDGE_CONTRACTS/src/interfaces/CCTPInterfaces/IMessageTransmitter.sol": {
+		"Nebula-bridge-contracts/src/interfaces/CCTPInterfaces/IMessageTransmitter.sol": {
 			"keccak256": "0xc1551a0378325853216cc7e5f3ab22954cb0b411b83221a66e92a36c19442c47",
 			"urls": [
 				"bzz-raw://ff2d7c07ee8da54cdadbac59fcfe959b5409918ff1ed9ff068f35c728d581dc1",
 				"dweb:/ipfs/QmYuDBQxHYbwAbUQcGT6kRqTnSfatcAhXEWBXJfm3ghBsg"
 			]
 		},
-		"BRIDGE_CONTRACTS/src/interfaces/CCTPInterfaces/IReceiver.sol": {
+		"Nebula-bridge-contracts/src/interfaces/CCTPInterfaces/IReceiver.sol": {
 			"keccak256": "0xc0e1ae6b294cd6f6b2ce6185f4856a54c3f8b66f07cc0944b923db44efa8b286",
 			"urls": [
 				"bzz-raw://ac7be5f0311f28a5e830f806bcf69e566e72b18491c5ad126464ceb9fd31dc55",
 				"dweb:/ipfs/QmaKSBuABhRzF3t51yHKb9jVzzia9Y5gNFfS4u4reSMkLD"
 			]
 		},
-		"BRIDGE_CONTRACTS/src/interfaces/CCTPInterfaces/IRelayer.sol": {
+		"Nebula-bridge-contracts/src/interfaces/CCTPInterfaces/IRelayer.sol": {
 			"keccak256": "0x5772f5f420a80b366754817089d56e12b504535deeedfad4e7403f3ca508ead0",
 			"urls": [
 				"bzz-raw://d9aaa08e6fdfd5253000ef7644f5fb7e9ed7a18ebb0989731bf828b4b5b44a1e",
 				"dweb:/ipfs/QmNvipZ7DM8XvmYRfr8nD9MyvoqAdQDQjM9wiqfZnDbWtN"
 			]
 		},
-		"BRIDGE_CONTRACTS/src/interfaces/CCTPInterfaces/ITokenMessenger.sol": {
+		"Nebula-bridge-contracts/src/interfaces/CCTPInterfaces/ITokenMessenger.sol": {
 			"keccak256": "0x2ab7696fa8b684863a088ded6251035a87a288737f6621730991a38dc303236c",
 			"urls": [
 				"bzz-raw://c47386479f378b8da3eb6c5254dd31b6657986c0fb668d27512a9cd8403cf562",
 				"dweb:/ipfs/QmUWQ95zVef9LHUfG4iurtjurVfW2TdQB7m41NopaQNNgY"
 			]
 		},
-		"BRIDGE_CONTRACTS/src/interfaces/IERC20.sol": {
+		"Nebula-bridge-contracts/src/interfaces/IERC20.sol": {
 			"keccak256": "0x206e252911fb60d0d6a54fb657b64344c33fa237ddb8553aa668a24d1856a7c2",
 			"license": "MIT",
 			"urls": [
@@ -1903,7 +1877,7 @@
 				"dweb:/ipfs/Qmd9wCoy5gDduquSq7po6uNFx9W28zS5drXXErDnN24aNZ"
 			]
 		},
-		"BRIDGE_CONTRACTS/src/interfaces/ITokenBridge.sol": {
+		"Nebula-bridge-contracts/src/interfaces/ITokenBridge.sol": {
 			"keccak256": "0xad665028667c70a3663044b335e3a1d388da3018bf4720853adb9fa8f49a9342",
 			"license": "Apache 2",
 			"urls": [
@@ -1911,7 +1885,7 @@
 				"dweb:/ipfs/Qmdu9AjEp1JaD6KEwe5S5pxgnzii5QXFR2peApBNkhNTes"
 			]
 		},
-		"BRIDGE_CONTRACTS/src/interfaces/IWETH.sol": {
+		"Nebula-bridge-contracts/src/interfaces/IWETH.sol": {
 			"keccak256": "0xbb3a2b248ef78c421dd137e75236af605d4618acca294e8930a9ba1aed769c9e",
 			"license": "Apache 2",
 			"urls": [
@@ -1919,7 +1893,7 @@
 				"dweb:/ipfs/QmfRtStHfFaQjSs5wocQmQEdosd6a5QmTP6rbB6ETqgmb4"
 			]
 		},
-		"BRIDGE_CONTRACTS/src/interfaces/IWormhole.sol": {
+		"Nebula-bridge-contracts/src/interfaces/IWormhole.sol": {
 			"keccak256": "0x9256fa479ecc3f4dc17b2860230ce6d658858262bee1dbabd654208381227d0d",
 			"license": "Apache 2",
 			"urls": [
@@ -1927,7 +1901,7 @@
 				"dweb:/ipfs/Qmdcw3Af8FcwgXUEWFcvwFKZ3B4d2dzWosUorrSLAnfN2Y"
 			]
 		},
-		"BRIDGE_CONTRACTS/src/interfaces/IWormholeReceiver.sol": {
+		"Nebula-bridge-contracts/src/interfaces/IWormholeReceiver.sol": {
 			"keccak256": "0x5e492d502a4be6633cab7c4d0f65c1c90fef2f05a4fd591de896ef3c6d7794cf",
 			"license": "Apache 2",
 			"urls": [
@@ -1935,7 +1909,7 @@
 				"dweb:/ipfs/QmaWTnPcSVPq9c44V1ZdsBX8P1a6qjJst3Vy7oNcuAgBs6"
 			]
 		},
-		"BRIDGE_CONTRACTS/src/interfaces/IWormholeRelayer.sol": {
+		"Nebula-bridge-contracts/src/interfaces/IWormholeRelayer.sol": {
 			"keccak256": "0xaa4afc2866e54ed9c9540e8ac4872d6ab9527884243087997a7d00f444004efc",
 			"license": "Apache 2",
 			"urls": [

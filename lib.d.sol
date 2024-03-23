@@ -33,8 +33,10 @@ library Structs {
     } 
 
     struct UserData{
-        uint256 bridgeOut;
-        uint256 bridgeIn;
+        uint256 ethBridgeOut; // eth bridge OUT nonces/indices
+        uint256 ethBridgeIn; // ""  ""      IN         "" ""
+        uint256 tokenBridgeOut; // Token Bridge OUT     "" ""
+        uint256 tokenBridgeIn; // token Bridge IN       "" ""
         uint256 totalRef;
         uint256 points;
     }

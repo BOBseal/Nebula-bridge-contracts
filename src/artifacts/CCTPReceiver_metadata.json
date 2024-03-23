@@ -100,7 +100,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"BRIDGE_PARTNERSHIP/src/CCTPBase.sol": "CCTPReceiver"
+			"Nebula-bridge-contracts/src/CCTPBase.sol": "CCTPReceiver"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -114,56 +114,56 @@
 		"remappings": []
 	},
 	"sources": {
-		"BRIDGE_PARTNERSHIP/src/Base.sol": {
+		"Nebula-bridge-contracts/src/Base.sol": {
 			"keccak256": "0x249d3dcd47a4f9183fa6aff8f1c75956cf54c217481177725ff2fd93f49c59c3",
 			"urls": [
 				"bzz-raw://aa0ceb0ac96ace95d5bbfc369577baec10d02ba33b514d10b868b8f48c2e0b0a",
 				"dweb:/ipfs/QmWPeQGpcu7SvzHmEnLybwJ6pGwzARKDpQYxVRbopRHK1o"
 			]
 		},
-		"BRIDGE_PARTNERSHIP/src/CCTPBase.sol": {
+		"Nebula-bridge-contracts/src/CCTPBase.sol": {
 			"keccak256": "0xb0cb70d96d3c57421feca6842eab200246abcfcd1da1d53003449c9f517b9b36",
 			"urls": [
 				"bzz-raw://b12d2fa5425eaf7bfb6d5c7c2f949dbd50c11939f4636a64cd1b440ab4010999",
 				"dweb:/ipfs/QmZZoGiQPRTCZtmjxsTzcd55wCkiriPiBPFU911XP3536i"
 			]
 		},
-		"BRIDGE_PARTNERSHIP/src/Utils.sol": {
+		"Nebula-bridge-contracts/src/Utils.sol": {
 			"keccak256": "0x2cfbe9804905a7ed86586add8316eed5b56421ed9d06637638448c19d85a9b0c",
 			"urls": [
 				"bzz-raw://abf5bf5f020206721a087d5c184fe7184d1f6709f98aca9fd8222e5c73a5d659",
 				"dweb:/ipfs/QmdjQPtSXYgvEWRb74C5Tg56961PbmkvRo2NdUFPqLTdBB"
 			]
 		},
-		"BRIDGE_PARTNERSHIP/src/interfaces/CCTPInterfaces/IMessageTransmitter.sol": {
+		"Nebula-bridge-contracts/src/interfaces/CCTPInterfaces/IMessageTransmitter.sol": {
 			"keccak256": "0xc1551a0378325853216cc7e5f3ab22954cb0b411b83221a66e92a36c19442c47",
 			"urls": [
 				"bzz-raw://ff2d7c07ee8da54cdadbac59fcfe959b5409918ff1ed9ff068f35c728d581dc1",
 				"dweb:/ipfs/QmYuDBQxHYbwAbUQcGT6kRqTnSfatcAhXEWBXJfm3ghBsg"
 			]
 		},
-		"BRIDGE_PARTNERSHIP/src/interfaces/CCTPInterfaces/IReceiver.sol": {
+		"Nebula-bridge-contracts/src/interfaces/CCTPInterfaces/IReceiver.sol": {
 			"keccak256": "0xc0e1ae6b294cd6f6b2ce6185f4856a54c3f8b66f07cc0944b923db44efa8b286",
 			"urls": [
 				"bzz-raw://ac7be5f0311f28a5e830f806bcf69e566e72b18491c5ad126464ceb9fd31dc55",
 				"dweb:/ipfs/QmaKSBuABhRzF3t51yHKb9jVzzia9Y5gNFfS4u4reSMkLD"
 			]
 		},
-		"BRIDGE_PARTNERSHIP/src/interfaces/CCTPInterfaces/IRelayer.sol": {
+		"Nebula-bridge-contracts/src/interfaces/CCTPInterfaces/IRelayer.sol": {
 			"keccak256": "0x5772f5f420a80b366754817089d56e12b504535deeedfad4e7403f3ca508ead0",
 			"urls": [
 				"bzz-raw://d9aaa08e6fdfd5253000ef7644f5fb7e9ed7a18ebb0989731bf828b4b5b44a1e",
 				"dweb:/ipfs/QmNvipZ7DM8XvmYRfr8nD9MyvoqAdQDQjM9wiqfZnDbWtN"
 			]
 		},
-		"BRIDGE_PARTNERSHIP/src/interfaces/CCTPInterfaces/ITokenMessenger.sol": {
+		"Nebula-bridge-contracts/src/interfaces/CCTPInterfaces/ITokenMessenger.sol": {
 			"keccak256": "0x2ab7696fa8b684863a088ded6251035a87a288737f6621730991a38dc303236c",
 			"urls": [
 				"bzz-raw://c47386479f378b8da3eb6c5254dd31b6657986c0fb668d27512a9cd8403cf562",
 				"dweb:/ipfs/QmUWQ95zVef9LHUfG4iurtjurVfW2TdQB7m41NopaQNNgY"
 			]
 		},
-		"BRIDGE_PARTNERSHIP/src/interfaces/IERC20.sol": {
+		"Nebula-bridge-contracts/src/interfaces/IERC20.sol": {
 			"keccak256": "0x206e252911fb60d0d6a54fb657b64344c33fa237ddb8553aa668a24d1856a7c2",
 			"license": "MIT",
 			"urls": [
@@ -171,7 +171,7 @@
 				"dweb:/ipfs/Qmd9wCoy5gDduquSq7po6uNFx9W28zS5drXXErDnN24aNZ"
 			]
 		},
-		"BRIDGE_PARTNERSHIP/src/interfaces/IWormhole.sol": {
+		"Nebula-bridge-contracts/src/interfaces/IWormhole.sol": {
 			"keccak256": "0x9256fa479ecc3f4dc17b2860230ce6d658858262bee1dbabd654208381227d0d",
 			"license": "Apache 2",
 			"urls": [
@@ -179,7 +179,7 @@
 				"dweb:/ipfs/Qmdcw3Af8FcwgXUEWFcvwFKZ3B4d2dzWosUorrSLAnfN2Y"
 			]
 		},
-		"BRIDGE_PARTNERSHIP/src/interfaces/IWormholeReceiver.sol": {
+		"Nebula-bridge-contracts/src/interfaces/IWormholeReceiver.sol": {
 			"keccak256": "0x5e492d502a4be6633cab7c4d0f65c1c90fef2f05a4fd591de896ef3c6d7794cf",
 			"license": "Apache 2",
 			"urls": [
@@ -187,7 +187,7 @@
 				"dweb:/ipfs/QmaWTnPcSVPq9c44V1ZdsBX8P1a6qjJst3Vy7oNcuAgBs6"
 			]
 		},
-		"BRIDGE_PARTNERSHIP/src/interfaces/IWormholeRelayer.sol": {
+		"Nebula-bridge-contracts/src/interfaces/IWormholeRelayer.sol": {
 			"keccak256": "0xaa4afc2866e54ed9c9540e8ac4872d6ab9527884243087997a7d00f444004efc",
 			"license": "Apache 2",
 			"urls": [

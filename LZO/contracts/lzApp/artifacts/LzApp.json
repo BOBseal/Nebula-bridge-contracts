@@ -67,8 +67,6 @@
 			"setPrecrime(address)": "baf3292d",
 			"setReceiveVersion(uint16)": "10ddb137",
 			"setSendVersion(uint16)": "07e0db17",
-			"setTrustedRemote(uint16,bytes)": "eb8d72b7",
-			"setTrustedRemoteAddress(uint16,bytes)": "a6c3d165",
 			"transferOwnership(address)": "f2fde38b",
 			"trustedRemoteLookup(uint16)": "7533d788"
 		}
@@ -520,42 +518,6 @@
 				}
 			],
 			"name": "setSendVersion",
-			"outputs": [],
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"inputs": [
-				{
-					"internalType": "uint16",
-					"name": "_remoteChainId",
-					"type": "uint16"
-				},
-				{
-					"internalType": "bytes",
-					"name": "_path",
-					"type": "bytes"
-				}
-			],
-			"name": "setTrustedRemote",
-			"outputs": [],
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"inputs": [
-				{
-					"internalType": "uint16",
-					"name": "_remoteChainId",
-					"type": "uint16"
-				},
-				{
-					"internalType": "bytes",
-					"name": "_remoteAddress",
-					"type": "bytes"
-				}
-			],
-			"name": "setTrustedRemoteAddress",
 			"outputs": [],
 			"stateMutability": "nonpayable",
 			"type": "function"

@@ -1,0 +1,338 @@
+{
+	"compiler": {
+		"version": "0.8.25+commit.b61c2a91"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "b",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "bridge",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "targetChain",
+						"type": "uint16"
+					},
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amt",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "dstGas",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "referal",
+						"type": "address"
+					}
+				],
+				"name": "bridgeCall",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Nebula-bridge-contracts/test.sol": "FF"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c",
+				"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"Nebula-bridge-contracts/LZO/contracts/libraries/BytesLib.sol": {
+			"keccak256": "0x7792f84cab13c1cfb572a558192ca3dd601615e1328d80130bd3e2784ac7eea4",
+			"license": "Unlicense",
+			"urls": [
+				"bzz-raw://04a8865cea811609366b80261cce9f348ae4d5839e591017b801764029dbccca",
+				"dweb:/ipfs/Qmet4ABJKcELrnwsikMPbRsBmH6b3hi7yBcpW7GT8j8wCh"
+			]
+		},
+		"Nebula-bridge-contracts/LZO/contracts/libraries/ExcessivelySafeCall.sol": {
+			"keccak256": "0x7c99d40e0c339d5db9548b42b7a6c5e7626fe87357735a086c1989266ca46365",
+			"license": "MIT OR Apache-2.0",
+			"urls": [
+				"bzz-raw://f6d06b3312bef2b947b749c20f60ab57b0f12e44bef9f901e9309843b94650f7",
+				"dweb:/ipfs/QmYAZ15ihv1VyYUsk7sytMzWuCornczSnLNNMmirSn6tDv"
+			]
+		},
+		"Nebula-bridge-contracts/LZO/contracts/lzApp/LzApp.sol": {
+			"keccak256": "0x53ba33c4930502b5d4cb9be3c4e659225b0dad6f029e13ad963d022a51a6b287",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://50f80ad0436e54519d6e2f67a8f2547a09d38a5fc31a1aeb1cc34531ff9e7e32",
+				"dweb:/ipfs/Qmc4b9HWpFDHDBtoBPg88nRuVHC5SaTqkaCwkKvqAQjhU5"
+			]
+		},
+		"Nebula-bridge-contracts/LZO/contracts/lzApp/NonblockingLzApp.sol": {
+			"keccak256": "0xbf9711f85fa4e1677141140c0941ce1bd8b88523bf2dbfb43baa709844ef993f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://80ee93359ca6c2e926878fcc28108fbd6b43db2ac7633c0d7cba996a500682bd",
+				"dweb:/ipfs/QmVj4Vff7tqb2ipcYs7XWjdrBvyZUZGnKQEUWqGypvxmRd"
+			]
+		},
+		"Nebula-bridge-contracts/LZO/contracts/lzApp/interfaces/ILayerZeroEndpoint.sol": {
+			"keccak256": "0x038a0822ff0ed7840f1871e33f02ab2f86f1e15d49569d1775aa5bc9ec89faf5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a22bc283811bd86986b123f724c4f16257513d8f063d54aaca34a25340385324",
+				"dweb:/ipfs/QmQdgyGNHe3xZre3cyPja4mzkTeVzrmb24Qi6YqzpC49cz"
+			]
+		},
+		"Nebula-bridge-contracts/LZO/contracts/lzApp/interfaces/ILayerZeroReceiver.sol": {
+			"keccak256": "0x66647bb1e973a693f4420f294688283cca5235ed950dc7a6f5f4394bf9ecf3c0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://09af5e180d289ce612cfbcfc075b93f1657603a7ca6090da34b5aa93596e9b62",
+				"dweb:/ipfs/QmekaVzELtgWHzEuQwuTa5TUJSMPyg3TCG6oocMj1nABQn"
+			]
+		},
+		"Nebula-bridge-contracts/LZO/contracts/lzApp/interfaces/ILayerZeroUserApplicationConfig.sol": {
+			"keccak256": "0x3d1c7a12c577b3339252875a90da60c59617f8b299f88e35cd8b9b190b762a73",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8cab1e719f06c9758b00e4b056e9f18dc0b3185a5859d1f9aa7acfc21c68703b",
+				"dweb:/ipfs/QmYmdCzQxmRzUKSAFhBkiY7R2AZtzdsL7SD8jUkzwnJkAw"
+			]
+		},
+		"Nebula-bridge-contracts/dualBridge.sol": {
+			"keccak256": "0x90d3125c390e4ecbcf201cbb18a7da7053664f1770bd2a099eecdf9b2a8e184d",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://75eba1ee2fd5d301a5310a9d047bfe75b9088eea5337be3c278d4c04c8319901",
+				"dweb:/ipfs/QmZNSWHDmDQzpsKbRQRWaziVbPh9CjLRxBXxGEvDAxNes5"
+			]
+		},
+		"Nebula-bridge-contracts/erc20Bridge.sol": {
+			"keccak256": "0x2c635ebd1f353d697b78f6bf8ebfcf69c9dbb7ba1e9b49e92ac66f9b8d71c5bc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://980bae2beb9c74a5b76a54dea40aa224ea941a02fa1a4a1d757dec184fbe2c63",
+				"dweb:/ipfs/QmXnTKQ4xPbG2Smp34jdB2Yyc9M4zfDuj4xbwc4RtV3oW3"
+			]
+		},
+		"Nebula-bridge-contracts/ethNativeBridge.sol": {
+			"keccak256": "0x0d8bff86656fc73fea6b47184fbef9dab2b786d1aa4c3e5213b0d3d3813a2a9f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e4289631adc90fe6608b4cb4b69e715c65b9784e81b8bab452fa6bd7379dc06c",
+				"dweb:/ipfs/QmfNadz76LAbQvv5ZoHL3Y1kTMa3ooFhGVZXSfLVdXgKu4"
+			]
+		},
+		"Nebula-bridge-contracts/lib.d.sol": {
+			"keccak256": "0xb70ddf7e6698bdc29609df4720b646e8440ffc71f953b29c1eaa433c52ef8096",
+			"license": "Unlicensed",
+			"urls": [
+				"bzz-raw://b1cc737edba3f9878edd93fdbbf007ac2cf975af0690f622c118db18385a8505",
+				"dweb:/ipfs/QmbtCFd34MFM1KiaGd1AjMBtfr5zH1rWZ9udHJmnQUauxi"
+			]
+		},
+		"Nebula-bridge-contracts/src/Base.sol": {
+			"keccak256": "0x249d3dcd47a4f9183fa6aff8f1c75956cf54c217481177725ff2fd93f49c59c3",
+			"urls": [
+				"bzz-raw://aa0ceb0ac96ace95d5bbfc369577baec10d02ba33b514d10b868b8f48c2e0b0a",
+				"dweb:/ipfs/QmWPeQGpcu7SvzHmEnLybwJ6pGwzARKDpQYxVRbopRHK1o"
+			]
+		},
+		"Nebula-bridge-contracts/src/CCTPAndTokenBase.sol": {
+			"keccak256": "0x4c2b579e45cd567796c6639d4a1b7332e196343b2b0b351d4b2f1b7eb9a5de15",
+			"urls": [
+				"bzz-raw://ead29a9e0ccf4f0559c6aacf2dff6654b33e2a897c96b44c8a601d51a102e3b6",
+				"dweb:/ipfs/QmQqiw27bAZUMZG2uMhSUnfxp9SVRpi25VGGnkTqw6MYEj"
+			]
+		},
+		"Nebula-bridge-contracts/src/CCTPBase.sol": {
+			"keccak256": "0xb0cb70d96d3c57421feca6842eab200246abcfcd1da1d53003449c9f517b9b36",
+			"urls": [
+				"bzz-raw://b12d2fa5425eaf7bfb6d5c7c2f949dbd50c11939f4636a64cd1b440ab4010999",
+				"dweb:/ipfs/QmZZoGiQPRTCZtmjxsTzcd55wCkiriPiBPFU911XP3536i"
+			]
+		},
+		"Nebula-bridge-contracts/src/TokenBase.sol": {
+			"keccak256": "0x777830411b4b60c069cf4903158ef1997726180bc27a3fe2c07c38801c7d4003",
+			"urls": [
+				"bzz-raw://d75ad38857586f62b5c306a9882c145ae15c8fcffbd5f5ec7c40a677ddf58a7a",
+				"dweb:/ipfs/QmVLnywxNvVibokZyCPn3n356drrQW7JgyEeuc9xtgtoQu"
+			]
+		},
+		"Nebula-bridge-contracts/src/Utils.sol": {
+			"keccak256": "0x2cfbe9804905a7ed86586add8316eed5b56421ed9d06637638448c19d85a9b0c",
+			"urls": [
+				"bzz-raw://abf5bf5f020206721a087d5c184fe7184d1f6709f98aca9fd8222e5c73a5d659",
+				"dweb:/ipfs/QmdjQPtSXYgvEWRb74C5Tg56961PbmkvRo2NdUFPqLTdBB"
+			]
+		},
+		"Nebula-bridge-contracts/src/WormholeRelayerSDK.sol": {
+			"keccak256": "0x39b2a67c047941692c560b01198cfa5e24d326c11c23ae6b420571849ae80d0c",
+			"urls": [
+				"bzz-raw://37d655ea5d15012a32f05f08151d5cb597065b5af6102060c2f7836b32356e25",
+				"dweb:/ipfs/QmYNenC57JECfqSmjnXa59yxkmPjTmSi6fh53XC343d3ru"
+			]
+		},
+		"Nebula-bridge-contracts/src/interfaces/CCTPInterfaces/IMessageTransmitter.sol": {
+			"keccak256": "0xc1551a0378325853216cc7e5f3ab22954cb0b411b83221a66e92a36c19442c47",
+			"urls": [
+				"bzz-raw://ff2d7c07ee8da54cdadbac59fcfe959b5409918ff1ed9ff068f35c728d581dc1",
+				"dweb:/ipfs/QmYuDBQxHYbwAbUQcGT6kRqTnSfatcAhXEWBXJfm3ghBsg"
+			]
+		},
+		"Nebula-bridge-contracts/src/interfaces/CCTPInterfaces/IReceiver.sol": {
+			"keccak256": "0xc0e1ae6b294cd6f6b2ce6185f4856a54c3f8b66f07cc0944b923db44efa8b286",
+			"urls": [
+				"bzz-raw://ac7be5f0311f28a5e830f806bcf69e566e72b18491c5ad126464ceb9fd31dc55",
+				"dweb:/ipfs/QmaKSBuABhRzF3t51yHKb9jVzzia9Y5gNFfS4u4reSMkLD"
+			]
+		},
+		"Nebula-bridge-contracts/src/interfaces/CCTPInterfaces/IRelayer.sol": {
+			"keccak256": "0x5772f5f420a80b366754817089d56e12b504535deeedfad4e7403f3ca508ead0",
+			"urls": [
+				"bzz-raw://d9aaa08e6fdfd5253000ef7644f5fb7e9ed7a18ebb0989731bf828b4b5b44a1e",
+				"dweb:/ipfs/QmNvipZ7DM8XvmYRfr8nD9MyvoqAdQDQjM9wiqfZnDbWtN"
+			]
+		},
+		"Nebula-bridge-contracts/src/interfaces/CCTPInterfaces/ITokenMessenger.sol": {
+			"keccak256": "0x2ab7696fa8b684863a088ded6251035a87a288737f6621730991a38dc303236c",
+			"urls": [
+				"bzz-raw://c47386479f378b8da3eb6c5254dd31b6657986c0fb668d27512a9cd8403cf562",
+				"dweb:/ipfs/QmUWQ95zVef9LHUfG4iurtjurVfW2TdQB7m41NopaQNNgY"
+			]
+		},
+		"Nebula-bridge-contracts/src/interfaces/IERC20.sol": {
+			"keccak256": "0x206e252911fb60d0d6a54fb657b64344c33fa237ddb8553aa668a24d1856a7c2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4cb73e8c2fd4ab43f4ed672a19fd7629fc169034dc461524bebd67d9fe9bb000",
+				"dweb:/ipfs/Qmd9wCoy5gDduquSq7po6uNFx9W28zS5drXXErDnN24aNZ"
+			]
+		},
+		"Nebula-bridge-contracts/src/interfaces/ITokenBridge.sol": {
+			"keccak256": "0xad665028667c70a3663044b335e3a1d388da3018bf4720853adb9fa8f49a9342",
+			"license": "Apache 2",
+			"urls": [
+				"bzz-raw://d86e90b3ee0c951fe3169df0af0d1071fb073d506923ecfee4e51f3eef941919",
+				"dweb:/ipfs/Qmdu9AjEp1JaD6KEwe5S5pxgnzii5QXFR2peApBNkhNTes"
+			]
+		},
+		"Nebula-bridge-contracts/src/interfaces/IWETH.sol": {
+			"keccak256": "0xbb3a2b248ef78c421dd137e75236af605d4618acca294e8930a9ba1aed769c9e",
+			"license": "Apache 2",
+			"urls": [
+				"bzz-raw://e5402ba174843110d8ac66b1f7cc90d4dbc2d50996ed15165a64b093b33dfcd8",
+				"dweb:/ipfs/QmfRtStHfFaQjSs5wocQmQEdosd6a5QmTP6rbB6ETqgmb4"
+			]
+		},
+		"Nebula-bridge-contracts/src/interfaces/IWormhole.sol": {
+			"keccak256": "0x9256fa479ecc3f4dc17b2860230ce6d658858262bee1dbabd654208381227d0d",
+			"license": "Apache 2",
+			"urls": [
+				"bzz-raw://521d895f44fe73b39cff8183d6e8a6a23e8cc3336fc3e1874ad798b9803b390b",
+				"dweb:/ipfs/Qmdcw3Af8FcwgXUEWFcvwFKZ3B4d2dzWosUorrSLAnfN2Y"
+			]
+		},
+		"Nebula-bridge-contracts/src/interfaces/IWormholeReceiver.sol": {
+			"keccak256": "0x5e492d502a4be6633cab7c4d0f65c1c90fef2f05a4fd591de896ef3c6d7794cf",
+			"license": "Apache 2",
+			"urls": [
+				"bzz-raw://509831b21b066d67c75423cad68420946970f44581e540afa11b6678c68f7d17",
+				"dweb:/ipfs/QmaWTnPcSVPq9c44V1ZdsBX8P1a6qjJst3Vy7oNcuAgBs6"
+			]
+		},
+		"Nebula-bridge-contracts/src/interfaces/IWormholeRelayer.sol": {
+			"keccak256": "0xaa4afc2866e54ed9c9540e8ac4872d6ab9527884243087997a7d00f444004efc",
+			"license": "Apache 2",
+			"urls": [
+				"bzz-raw://1f96f1d944798269dca0afed8cf3c64fda0493c375170783692d0f506bab20af",
+				"dweb:/ipfs/QmXwQBXgvBMX8z8bd6excB5x9wHhnkRZQVmgswmFmqk9cu"
+			]
+		},
+		"Nebula-bridge-contracts/test.sol": {
+			"keccak256": "0xc5995f55dd0da0a2f452d2e7c2103f06352091693f6cffa932d23eee05d062e7",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://9785b624d6ee7c4add445a4acf3e8431c6ed39c39ad04a01ba621d508d42c9c0",
+				"dweb:/ipfs/QmYoYhNnbW9YeGTtZXK3VHWaXEZopbxChxNWZmv3CuwPh7"
+			]
+		}
+	},
+	"version": 1
+}

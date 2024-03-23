@@ -67,6 +67,4 @@ abstract contract LZOEtherBridgeV1 is NonblockingLzApp {
     function _distrustAddress(uint16 chainId) public onlyOwner{
        delete trustedRemoteLookup[chainId];
     }
-
-    receive() external payable {}
 }

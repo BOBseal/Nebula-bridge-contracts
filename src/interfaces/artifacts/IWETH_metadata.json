@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.17+commit.8df45f5f"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -210,6 +210,14 @@
 			}
 		],
 		"devdoc": {
+			"events": {
+				"Approval(address,address,uint256)": {
+					"details": "Emitted when the allowance of a `spender` for an `owner` is set by a call to {approve}. `value` is the new allowance."
+				},
+				"Transfer(address,address,uint256)": {
+					"details": "Emitted when `value` tokens are moved from one account (`from`) to another (`to`). Note that `value` may be zero."
+				}
+			},
 			"kind": "dev",
 			"methods": {
 				"allowance(address,address)": {
@@ -241,9 +249,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"BRIDGE_PARTNERSHIP/src/interfaces/IWETH.sol": "IWETH"
+			"Nebula-bridge-contracts/src/interfaces/IWETH.sol": "IWETH"
 		},
-		"evmVersion": "london",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -255,7 +263,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"BRIDGE_PARTNERSHIP/src/interfaces/IERC20.sol": {
+		"Nebula-bridge-contracts/src/interfaces/IERC20.sol": {
 			"keccak256": "0x206e252911fb60d0d6a54fb657b64344c33fa237ddb8553aa668a24d1856a7c2",
 			"license": "MIT",
 			"urls": [
@@ -263,7 +271,7 @@
 				"dweb:/ipfs/Qmd9wCoy5gDduquSq7po6uNFx9W28zS5drXXErDnN24aNZ"
 			]
 		},
-		"BRIDGE_PARTNERSHIP/src/interfaces/IWETH.sol": {
+		"Nebula-bridge-contracts/src/interfaces/IWETH.sol": {
 			"keccak256": "0xbb3a2b248ef78c421dd137e75236af605d4618acca294e8930a9ba1aed769c9e",
 			"license": "Apache 2",
 			"urls": [
